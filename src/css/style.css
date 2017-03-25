@@ -13,3 +13,27 @@ header {
 h1 {
   font-size: 3rem;
 }
+
+.answerIsTrue {
+  color: green;
+}
+
+.answerIsFalse {
+  color: red;
+}
+
+.answerDiv {
+  display: flex;
+}
+
+.answer {
+  cursor: pointer;
+}
+
+.right {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
