@@ -55,24 +55,18 @@ class App extends Component {
     ]
   };
 
-  handleQuestionChange(e) {
+  changeQuestion(e) {
     const {currentQuestion} = this.state;
     const answer = e.currentTarget;
-
     score += parseInt(answer.value);
-
     setTimeout(() => {
-      this.clearAnswer(currentQuestion, answer, score);
-    }, 1000);
+      this.clearAnswerButton(currentQuestion, answer, score);
+    }, 500);
   }
 
-  clearAnswer(currentQuestion, answer, score) {
+  clearAnswerButton(currentQuestion, answer, score) {
     answer.checked = false;
     this.setState({currentQuestion: currentQuestion += 1, score});
-  }
-
-  scoreFeedback() {
-    return <ScoreFeedback score={score} />;
   }
 
   renderQuestion() {
@@ -80,16 +74,14 @@ class App extends Component {
     const {questions} = this.state;
 
     if (currentQuestion !== questions.length) {
-      return <Question questions={questions} currentQuestion={currentQuestion} onQuestionAnswered={this.handleQuestionChange.bind(this)} />;
+      return <Question questions={questions} currentQuestion={currentQuestion} onQuestionAnswered={this.changeQuestion.bind(this)} />;
     } else {
       return this.scoreFeedback();
     }
   }
 
-  handleStartQuiz() {
-    let {quizStarted} = this.state;
-    quizStarted = true;
-    this.setState({quizStarted});
+  scoreFeedback() {
+    return <ScoreFeedback score={score} />;
   }
 
   startQuiz() {
@@ -103,10 +95,14 @@ class App extends Component {
     }
   }
 
+  handleStartQuiz() {
+    this.setState({quizStarted: true});
+  }
+
   render() {
     return (
-      <header className='quizDiv'>
-        <h1 className='quizTitle'>How MJ are you?</h1>
+      <header className='quiz_div'>
+        <h1 className='quiz_title'>How MJ are you?</h1>
         {this.startQuiz()}
       </header>
     );

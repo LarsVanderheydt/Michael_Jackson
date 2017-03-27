@@ -23,7 +23,7 @@ const ScoreFeedback = ({score}) => {
 
   return (
     <div>
-      <h1 className='blackBoldItalic yourQuizScore'>Wauw jij behaalde {score} punten.</h1>
+      <h1 className='black_bold_italic your_quiz_score'>Wauw jij behaalde {score} punten.</h1>
       <p>{scoreFeedbackText}</p>
     </div>
   );

@@ -6,20 +6,19 @@ const Question = ({questions, onQuestionAnswered: handleChange, currentQuestion}
   const questionTracker = () => {
     return (
       questions.map(a => {
-        return <QuestionTracker key={a.questionNr} className='questionTracker' questionNr={a.questionNr} currentQuestion={currentQuestion} />;
+        return <QuestionTracker key={a.questionNr} className='question_tracker' questionNr={a.questionNr} currentQuestion={currentQuestion} />;
       })
     );
   };
 
   return (
     <div>
-      <h1 className='blackBoldItalic quizMargin'>{questions[currentQuestion].question.toString()}</h1>
-      {
-        questions[currentQuestion].chooseFrom.map(
+      <h1 className='black_bold_italic quiz_margin'>{questions[currentQuestion].question.toString()}</h1>
+      {questions[currentQuestion].chooseFrom.map(
         a => {
           return (
             <div key={a.id} className='answer'>
-              <label className='radioButtonLabel'>
+              <label className='radio_button_label'>
                 <input
                   type='radio'
                   name={questions[currentQuestion].questionNr}
@@ -29,13 +28,12 @@ const Question = ({questions, onQuestionAnswered: handleChange, currentQuestion}
                 />
                 <div></div>
               </label>
-              <label htmlFor={a.id} className='answerLabel'>{a.answer}</label>
+              <label htmlFor={a.id} className='answer_label'>{a.answer}</label>
             </div>
           );
         }
-      )
-    }
-    <div className='questionTrackingDiv'>{questionTracker()}</div>
+      )}
+    <div className='question_tracking_div'>{questionTracker()}</div>
   </div>
   );
 };

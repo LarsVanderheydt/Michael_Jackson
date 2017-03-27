@@ -1,9 +1,9 @@
 import React, {PropTypes} from "react";
 
 const QuestionTracker = ({questionNr, currentQuestion}) => {
-
   const getStyle = () => {
     let style = {};
+
     if (questionNr > currentQuestion) {
       style = {backgroundColor: `black`};
     } else {
@@ -13,9 +13,7 @@ const QuestionTracker = ({questionNr, currentQuestion}) => {
     return style;
   };
 
-  return (
-    <div className='questionTracker' style={getStyle()}></div>
-  );
+  return <div className='question_tracker' style={getStyle()}></div>;
 };
 
 QuestionTracker.propTypes = {
