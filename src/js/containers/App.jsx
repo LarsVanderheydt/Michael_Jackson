@@ -1,8 +1,13 @@
 import React, {Component} from 'react';
 import Question from '../components/Question';
+import StartQuiz from '../components/StartQuiz';
+import ScoreFeedback from '../components/ScoreFeedback';
+
+let score = 0;
 
 class App extends Component {
   state = {
+    quizStarted: false,
     currentQuestion: 0,
     questions: [
       {
@@ -12,17 +17,17 @@ class App extends Component {
           {
             id: 1,
             answer: `rood, geel, bordeaux`,
-            correct: false
+            answerScore: 1
           },
           {
             id: 2,
             answer: `rood, groen, bordeaux`,
-            correct: false
+            answerScore: 2
           },
           {
             id: 3,
             answer: `rood, groen, blauw`,
-            correct: true
+            answerScore: 5
           }
         ]
       },
@@ -33,17 +38,17 @@ class App extends Component {
           {
             id: 1,
             answer: `king of crocs`,
-            correct: false
+            answerScore: 3
           },
           {
             id: 2,
             answer: `king of pop`,
-            correct: true
+            answerScore: 4
           },
           {
             id: 3,
             answer: `queen of baggels`,
-            correct: false
+            answerScore: 5
           }
         ]
       }
@@ -52,25 +57,22 @@ class App extends Component {
 
   handleQuestionChange(e) {
     const {currentQuestion} = this.state;
-    // const {questions} = this.state;
     const answer = e.currentTarget;
 
-    if (answer.value === `true`) {
-      answer.parentNode.classList.add(`answerIsTrue`);
-    } else {
-      answer.parentNode.classList.add(`answerIsFalse`);
-    }
+    score += parseInt(answer.value);
+
     setTimeout(() => {
-      this.clearAnswer(currentQuestion, answer);
+      this.clearAnswer(currentQuestion, answer, score);
     }, 1000);
   }
 
-  clearAnswer(currentQuestion, answer) {
-    if (answer.parentNode.classList.contains(`answerIsTrue`)) {
-      answer.parentNode.classList.remove(`answerIsTrue`);
-    }
+  clearAnswer(currentQuestion, answer, score) {
     answer.checked = false;
-    this.setState({currentQuestion: currentQuestion += 1});
+    this.setState({currentQuestion: currentQuestion += 1, score});
+  }
+
+  scoreFeedback() {
+    return <ScoreFeedback score={score} />;
   }
 
   renderQuestion() {
@@ -80,17 +82,33 @@ class App extends Component {
     if (currentQuestion !== questions.length) {
       return <Question questions={questions} currentQuestion={currentQuestion} onQuestionAnswered={this.handleQuestionChange.bind(this)} />;
     } else {
-      return <h1>Bedankt voor het spelen</h1>;
+      return this.scoreFeedback();
+    }
+  }
+
+  handleStartQuiz() {
+    let {quizStarted} = this.state;
+    quizStarted = true;
+    this.setState({quizStarted});
+  }
+
+  startQuiz() {
+    const {quizStarted} = this.state;
+    if (quizStarted === false) {
+      return (
+        <StartQuiz clickedToStartQuiz={this.handleStartQuiz.bind(this)} />
+      );
+    } else {
+      return this.renderQuestion();
     }
   }
 
   render() {
     return (
-      <section>
-        <header>
-          {this.renderQuestion()}
-        </header>
-      </section>
+      <header className='quizDiv'>
+        <h1 className='quizTitle'>How MJ are you?</h1>
+        {this.startQuiz()}
+      </header>
     );
   }
 }

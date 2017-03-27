@@ -8,7 +8,7 @@ const init = () => {
 
   render(
     <App  />,
-    document.querySelector(`.react-mount`)
+    document.querySelector(`.quiz`)
   );
 
 };

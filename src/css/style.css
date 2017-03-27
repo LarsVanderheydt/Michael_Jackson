@@ -1,9 +1,8 @@
 @import 'reset';
 
 body {
-  font-family: 'Helvetica neue', Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica neue', Helvetica, Arial, sans-serif, Georgia, 'Big Caslon';
   font-size: 1.6rem;
-  margin: 2rem;
 }
 
 header {
@@ -14,26 +13,103 @@ h1 {
   font-size: 3rem;
 }
 
-.answerIsTrue {
-  color: green;
+/*  REUSABLE  */
+
+.blackBoldItalic {
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: bold;
+  font-family: 'Helvetica neue';
 }
 
-.answerIsFalse {
-  color: red;
+.quizMargin {
+  margin-bottom: 2rem;
 }
 
-.answerDiv {
+/*  QUIZSTYLING  */
+
+.quiz {
   display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-right: 15rem;
 }
+
+/* App.jsx */
+
+.quizDiv { width: 27vw; }
+
+.quizTitle {
+  color: #aa0816;
+  font-family: 'Big Caslon';
+  margin-bottom: 2rem;
+  font-size: 4rem;
+}
+
+/* StartQuiz.jsx */
+
+.startQuizTextAndButton {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 1.8rem;
+
+  & button {
+    margin-right: 5rem;
+    width: 15rem;
+    border: none;
+    background-color: #aa0816;
+    color: white;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+  }
+}
+
+/* Question.jsx */
 
 .answer {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.answerLabel {
+  margin-bottom: 1rem;
   cursor: pointer;
 }
 
-.right {
-  color: green;
+.radioButtonLabel {
+  margin-right: 1.5rem;
+
+  & input {
+    display: none;
+  }
+
+  & input + div {
+    margin-top: .2rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+    border: .2rem solid black;
+  }
+
+  & input:checked + div {
+    background-color: black;
+  }
 }
 
-.wrong {
-  color: red;
+.questionTrackingDiv {
+  display: flex;
+  justify-content: left;
 }
+
+.questionTracker {
+  width: 3rem;
+  height: .3rem;
+  margin-right: 1rem;
+}
+
+/* ScoreFeedback.jsx */
+
+.yourQuizScore { margin-bottom: 2rem; }
