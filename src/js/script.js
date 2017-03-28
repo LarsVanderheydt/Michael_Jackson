@@ -3,6 +3,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import App from './containers/App';
+import ScrollToAnim from './lib/scrollToAnim';
+
 const $video = document.querySelector(`video`);
 
 const init = () => {
@@ -20,15 +22,7 @@ const clickHandler = () => {
   $video.pause();
   const i = 0;
 
-  requestAnimationFrame(() => scrollToAnim($video.offsetHeight, i));
-};
-
-const scrollToAnim = (scrollHeight, i) => {
-  if (i < scrollHeight) {
-    window.scrollBy(0, scrollHeight / 20);
-    i += scrollHeight / 20;
-    requestAnimationFrame(() => scrollToAnim(scrollHeight, i));
-  }
+  requestAnimationFrame(() => ScrollToAnim($video.offsetHeight, i));
 };
 
 init();

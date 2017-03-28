@@ -18,6 +18,7 @@ h1 {
 :root {
   --red: #aa0816;
   --section-width: 50rem;
+  --line-thickness: .2rem;
 
   --intro-title-setup: {
     position: absolute;
@@ -31,6 +32,11 @@ h1 {
     color: white;
     display: flex;
   }
+
+  --line-setup: {
+    content: '';
+    position: absolute;
+  }
 }
 
 /*  REUSABLE  */
@@ -41,9 +47,7 @@ h1 {
   font-weight: bold;
 }
 
-.quiz_margin {
-  margin-bottom: 2rem;
-}
+.quiz_margin { margin-bottom: 2rem; }
 
 .top_quote {
   font-style: italic;
@@ -51,6 +55,11 @@ h1 {
   line-height: 4rem;
   text-align: center;
   width: 37rem;
+}
+
+.first_paragraf_letter {
+  font-size: 4rem;
+  font-family: 'Big Caslon';
 }
 
 /*  VIDEO  */
@@ -238,11 +247,10 @@ h1 {
     font-style: italic;
 
     &::before {
-      position: absolute;
+      @apply --line-setup;
+      height: var(--line-thickness);
       left: 0;
-      content: '';
       width: 10rem;
-      height: .2rem;
       margin-top: 1rem;
       background-color: white;
     }
@@ -297,29 +305,247 @@ h1 {
   color: #defcf5;
 
   &::after {
-    position: absolute;
-    content: '';
+    @apply --line-setup;
+    height: var(--line-thickness);
     width: 53rem;
-    height: .2rem;
     background-color: var(--red);
     margin-top: 6rem;
     margin-left: -38rem;
   }
 
   &::before {
-    position: absolute;
-    content: '';
+    @apply --line-setup;
+    height: var(--line-thickness);
     width: 53rem;
-    height: .2rem;
     background-color: var(--red);
     margin-left: -9rem;
     margin-top: -1rem;
   }
 }
 
-.first_paragraf_letter {
-  font-size: 4rem;
-  font-family: 'Big Caslon';
+/*  SUNGLASSES  */
+
+.sunglasses_first_container {
+  width: 100vw;
+  height: 90rem;
+}
+
+.sunglasses_img {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: -99;
+  margin-top: -.3rem;
+}
+
+.sunglasses_content_div {
+
+  & h1 {
+    text-align: right;
+    margin-right: 20rem;
+    margin-top: 20rem;
+    font-family: 'Big Caslon';
+    color: var(--red);
+    font-size: 6rem;
+
+    &::after {
+      @apply --line-setup;
+      height: var(--line-thickness);
+      width: 17rem;
+      background-color: black;
+      right: 0;
+      margin-top: 2rem;
+
+    }
+  }
+
+  & p {
+    position: absolute;
+    width: 49rem;
+    margin-top: 60rem;
+    margin-left: 40rem;
+
+    &::before {
+      @apply --line-setup;
+      width: var(--line-thickness);
+      height: 15rem;
+      margin-left: -2rem;
+      background-color: black;
+      z-index: 99;
+    }
+  }
+}
+
+.sunglasses_whos_bad {
+  font-family: Impact;
+  text-align: right;
+  font-size: 7.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.sunglasses_second_container {
+  margin-top: -8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sunglasses_second_text_container {
+  width: 80rem;
+  background-color: black;
+  color: white;
+
+  & h2 {
+    position: absolute;
+    transform: rotate(270deg);
+    font-style: italic;
+    margin-left: -13rem;
+    margin-top: 17rem;
+    font-size: 3.3rem;
+
+    &::before {
+      @apply --line-setup;
+      width: var(--line-thickness);
+      background-color: white;
+      height: 20rem;
+      transform: rotate(270deg);
+      margin-top: -8.5rem;
+      margin-left: -12rem;
+    }
+  }
+
+  & p {
+    width: 53rem;
+    margin-bottom: 9rem;
+  }
+
+  &::after {
+    @apply --line-setup;
+    width: var(--line-thickness);
+    background-color: black;
+    height: 10rem;
+    margin-left: 3.1rem;
+  }
+}
+
+.sunglasses_first_p {
+  margin-left: 10rem;
+  padding-top: 10rem;
+}
+
+.sunglasses_second_p {
+  margin-left: 20rem;
+}
+
+/*  PENNY LOAFERS */
+
+.penny_loafers_title_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  & h1 {
+    margin-right: 20rem;
+    font-size: 6rem;
+    font-family: 'Big Caslon';
+    margin-bottom: 3rem;
+
+    &::after {
+      @apply --line-setup;
+      height: var(--line-thickness);
+      width: 10rem;
+      right: 0;
+      background-color: black;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+.penny_loafers_img {
+  margin-top: -4rem;
+}
+
+.penny_loafers_section {
+  height: 100rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(../assets/img/capa.png);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+
+  & p {
+    width: var(--section-width);
+  }
+}
+
+.penny_loafers_text_left {
+  margin-left: -60rem;
+  padding-top: 3rem;
+}
+
+.penny_loafers_text_right {
+  margin-left: 60rem;
+}
+
+.penny_loafers_quote {
+  font-style: italic;
+  text-align: center;
+  font-size: 3rem;
+  font-family: Georgia;
+  line-height: 3.5rem;
+  font-weight: 100;
+
+  &::before {
+    @apply --line-setup;
+    height: var(--line-thickness);
+    width: 53rem;
+    background-color: var(--red);
+    margin-left: -3rem;
+    margin-top: -2rem;
+  }
+
+  &::after {
+    @apply --line-setup;
+    height: var(--line-thickness);
+    width: 53rem;
+    background-color: var(--red);
+    margin-top: 6rem;
+    margin-left: -47rem;
+  }
+}
+
+.penny_loafers_border_left {
+
+  &::before {
+    @apply --line-setup;
+    width: var(--line-thickness);
+    height: 13rem;
+    margin-left: -2rem;
+    background-color: white;
+  }
+}
+
+.penny_loafers_title_bottom {
+  position: absolute;
+  transform: rotate(270deg);
+  color: white;
+  font-style: italic;
+  margin-top: -40rem;
+  margin-left: -18rem;
+
+  &::before {
+    @apply --line-setup;
+    width: var(--line-thickness);
+    height: 16rem;
+    background-color: var(--red);
+    transform: rotate(270deg);
+    margin-left: -10.5rem;
+    margin-top: -6.5rem;
+  }
 }
 
 /*  QUIZSTYLING  */
@@ -414,3 +640,21 @@ h1 {
 /* ScoreFeedback.jsx */
 
 .your_quiz_score { margin-bottom: 2rem; }
+
+/*  FOOTER  */
+
+.footer {
+  background-color: black;
+  height: 20rem;
+  margin-top: 20rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.nostalgie {
+  align-self: flex-end;
+  margin-top: -4rem;
+  right: 0;
+  font-size: 8rem;
+  font-family: Impact;
+}
