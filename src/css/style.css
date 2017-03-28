@@ -13,6 +13,16 @@ h1 {
   font-size: 3rem;
 }
 
+:root {
+  --intro-title-setup: {
+    position: absolute;
+    font-weight: bold;
+    font-family: 'Helvetica neue';
+    font-size: 8rem;
+    letter-spacing: 1rem;
+  }
+}
+
 /*  REUSABLE  */
 
 .black_bold_italic {
@@ -35,6 +45,7 @@ h1 {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  z-index: 19;
 
   & video {
     min-width: 100%;
@@ -56,6 +67,46 @@ h1 {
 }
 
 /*  INTRO  */
+
+.intro_container {
+  height: 45.6rem;
+  background-color: #f6f6f6;
+}
+
+.intro_michael {
+  @apply --intro-title-setup;
+  font-style: italic;
+  font-size: 8rem;
+  margin-top: -3.5rem;
+  margin-right: 2rem;
+  right: 0;
+}
+
+.intro_jackson {
+  @apply --intro-title-setup;
+  opacity: .1;
+  transform: rotate(90deg);
+  margin-top: 25rem;
+}
+
+.intro_text_container {
+  width: 50rem;
+  font-family: 'Helvetica neue';
+  margin: 0 auto;
+  padding-top: 15rem;
+  font-weight: 300;
+  font-style: italic;
+
+  & p {
+    font-size: 2rem;
+    margin-bottom: 4rem;
+    line-height: 2.5rem;
+
+    & span {
+      font-weight: bold;
+    }
+  }
+}
 
 /*  QUIZSTYLING  */
 
