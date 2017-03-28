@@ -12,42 +12,84 @@ class App extends Component {
     questions: [
       {
         questionNr: 0,
-        question: `wat zijn de 3 primaire kleuren?`,
+        question: `Wat is je etnische achtergrond?`,
         chooseFrom: [
           {
             id: 1,
-            answer: `rood, geel, bordeaux`,
+            answer: `Zwart`,
             answerScore: 1
           },
           {
             id: 2,
-            answer: `rood, groen, bordeaux`,
+            answer: `Blank`,
             answerScore: 2
           },
           {
             id: 3,
-            answer: `rood, groen, blauw`,
+            answer: `It doesn’t matter if you’re black or white`,
             answerScore: 5
           }
         ]
       },
       {
         questionNr: 1,
-        question: `wie is michael jackson?`,
+        question: `Naar welke frisdrank gaat je voorkeur uit?`,
         chooseFrom: [
           {
             id: 1,
-            answer: `king of crocs`,
+            answer: `Cola`,
             answerScore: 3
           },
           {
             id: 2,
-            answer: `king of pop`,
+            answer: `Pepsi`,
             answerScore: 4
           },
           {
             id: 3,
-            answer: `queen of baggels`,
+            answer: `Andere`,
+            answerScore: 5
+          }
+        ]
+      },
+      {
+        questionNr: 2,
+        question: `Beantwoord deze vraag zo snel mogelijk: Als ik een dochter kreeg, dat koos ik voor de naam ...`,
+        chooseFrom: [
+          {
+            id: 1,
+            answer: `Paris`,
+            answerScore: 6
+          },
+          {
+            id: 2,
+            answer: `Laquisha`,
+            answerScore: 9
+          },
+          {
+            id: 3,
+            answer: `Chantal`,
+            answerScore: 5
+          }
+        ]
+      },
+      {
+        questionNr: 3,
+        question: `Mijn favoriete huisdier:`,
+        chooseFrom: [
+          {
+            id: 1,
+            answer: `Niets gaat boven de liefde van een hond.`,
+            answerScore: 6
+          },
+          {
+            id: 2,
+            answer: `Sowieso een aap! Of nee, een tijger! Of een giraf, papegaai, olifant, enkele flamingo’s, reptielen en gooi er nog maar een vogelspin bij ook.`,
+            answerScore: 9
+          },
+          {
+            id: 3,
+            answer: `Toch liever een huiskat.`,
             answerScore: 5
           }
         ]

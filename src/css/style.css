@@ -1,8 +1,10 @@
 @import 'reset';
 
 body {
-  font-family: 'Helvetica neue', Helvetica, Arial, sans-serif, Georgia, 'Big Caslon';
-  font-size: 1.6rem;
+  font-family: 'Helvetica neue';
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 2.5rem;
 }
 
 header {
@@ -14,26 +16,41 @@ h1 {
 }
 
 :root {
+  --red: #aa0816;
+  --section-width: 50rem;
+
   --intro-title-setup: {
     position: absolute;
     font-weight: bold;
-    font-family: 'Helvetica neue';
     font-size: 8rem;
     letter-spacing: 1rem;
+  }
+
+  --black-section-setup: {
+    background-color: black;
+    color: white;
+    display: flex;
   }
 }
 
 /*  REUSABLE  */
 
-.black_bold_italic {
+.bold_italic {
   font-size: 1.8rem;
   font-style: italic;
   font-weight: bold;
-  font-family: 'Helvetica neue';
 }
 
 .quiz_margin {
   margin-bottom: 2rem;
+}
+
+.top_quote {
+  font-style: italic;
+  font-size: 4.8rem;
+  line-height: 4rem;
+  text-align: center;
+  width: 37rem;
 }
 
 /*  VIDEO  */
@@ -62,8 +79,15 @@ h1 {
 .video_skip {
   position: absolute;
   z-index: 9;
-  left: 85%;
-  top: 90%;
+  left: 90%;
+  top: 95%;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  font-weight: 200;
+  font-style: italic;
+  color: white;
+  opacity: .5;
 }
 
 /*  INTRO  */
@@ -71,22 +95,26 @@ h1 {
 .intro_container {
   height: 45.6rem;
   background-color: #f6f6f6;
+  position: relative;
 }
 
 .intro_michael {
   @apply --intro-title-setup;
   font-style: italic;
   font-size: 8rem;
-  margin-top: -3.5rem;
+  margin-top: -1rem;
   margin-right: 2rem;
   right: 0;
 }
 
 .intro_jackson {
   @apply --intro-title-setup;
-  opacity: .1;
   transform: rotate(90deg);
-  margin-top: 25rem;
+  transform-origin: bottom left;
+  margin-left: 10vw;
+  opacity: .1;
+  top: 0;
+  left: 0;
 }
 
 .intro_text_container {
@@ -94,18 +122,204 @@ h1 {
   font-family: 'Helvetica neue';
   margin: 0 auto;
   padding-top: 15rem;
-  font-weight: 300;
   font-style: italic;
 
   & p {
     font-size: 2rem;
     margin-bottom: 4rem;
-    line-height: 2.5rem;
+  }
+}
 
-    & span {
-      font-weight: bold;
+/* SMOOTH CRIMINAl */
+
+.smooth_criminal_container {
+  @apply --black-section-setup;
+  height: 90rem;
+  padding-top: 11.5rem;
+}
+
+.smooth_criminal_mj_top_container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: -8rem;
+
+  & h1 {
+    font-size: 25.55rem;
+    font-family: Impact;
+    margin-bottom: 9rem;
+  }
+
+  & h2 {
+    font-family: Helvetica;
+    font-size: 2.1rem;
+    margin-right: 1rem;
+    letter-spacing: .2rem;
+  }
+}
+
+.smooth_criminal_left_container {
+  width: var(--section-width);
+  margin-left: 2rem;
+
+  & h1 {
+    position: absolute;
+    transform: rotate(270deg);
+    margin-top: 28.5rem;
+    margin-left: -25rem;
+    font-size: 5rem;
+    font-family: 'Big Caslon';
+    letter-spacing: .5rem;
+    padding-bottom: 2rem;
+    z-index: 9;
+    border-bottom: .2rem solid white;
+  }
+}
+
+.smooth_criminal_left_text {
+  margin-left: 10rem;
+  margin-bottom: 3rem;
+}
+
+.smooth_criminal_img {
+  margin-left: -7rem;
+  transform: scale(.9);
+  margin-top: 2rem;
+}
+
+.smooth_criminal_right_container {
+  width: var(--section-width);
+  margin-left: 30rem;
+  margin-top: 15rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.quote_link {
+  margin-top: 4rem;
+  margin-bottom: 7rem;
+  font-family: 'Big Caslon';
+  color: white;
+  font-weight: 200;
+  font-size: 2.4rem;
+  text-decoration: none;
+
+  &:hover { color: var(--red); }
+}
+
+.smooth_criminal_quote_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.smooth_criminal_paragraf { margin-bottom: 4rem; }
+
+/*  SINGLE RHINESTONE GLOVE */
+
+.single_rhinestone_glove_container {
+  @apply --black-section-setup;
+  height: 120rem;
+  width: 100vw;
+  background-image: url(../assets/img/The_Single_Rhinestone_Glove.png);
+  background-repeat: no-repeat;
+
+  & section {
+    width: 50vw;
+    margin-top: 4rem;
+  }
+}
+
+.single_rhinestone_glove_left_container {
+  margin-left: 10rem;
+
+  & h1 {
+    font-style: italic;
+
+    &::before {
+      position: absolute;
+      left: 0;
+      content: '';
+      width: 10rem;
+      height: .2rem;
+      margin-top: 1rem;
+      background-color: white;
     }
   }
+
+  & p {
+    width: var(--section-width);
+    margin-top: 5rem;
+  }
+}
+
+.single_rhinestone_glove_right_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -15rem;
+  padding-top: 10rem;
+  padding-bottom: 15rem;
+  justify-content: space-between;
+
+  & h1 {
+    font-family: 'Big Caslon';
+    font-size: 6rem;
+    width: 55rem;
+    text-align: center;
+    line-height: 7rem;
+  }
+
+  & p {
+    margin-top: 7rem;
+  }
+}
+
+.single_rhinestone_glove_right_first_p {
+  width: var(--section-width);
+  text-align: center;
+}
+
+.single_rhinestone_glove_right_second_p {
+  width: var(--section-width);
+  text-align: left;
+}
+
+.single_rhinestone_glove_quote {
+  text-align: center;
+  margin-left: -30rem;
+  font-family: Georgia;
+  font-size: 3.4rem;
+  line-height: 5rem;
+  font-style: italic;
+  width: 36rem;
+  color: #defcf5;
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 53rem;
+    height: .2rem;
+    background-color: var(--red);
+    margin-top: 6rem;
+    margin-left: -38rem;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    width: 53rem;
+    height: .2rem;
+    background-color: var(--red);
+    margin-left: -9rem;
+    margin-top: -1rem;
+  }
+}
+
+.first_paragraf_letter {
+  font-size: 4rem;
+  font-family: 'Big Caslon';
 }
 
 /*  QUIZSTYLING  */
@@ -120,12 +334,15 @@ h1 {
 
 /* App.jsx */
 
-.quiz_div { width: 27vw; }
+.quiz_div {
+  width: 30vw;
+  margin-top: 12.5rem;
+}
 
 .quiz_title {
-  color: #aa0816;
+  color: var(--red);
   font-family: 'Big Caslon';
-  margin-bottom: 2rem;
+  margin-bottom: 4.5rem;
   font-size: 4rem;
 }
 
@@ -134,14 +351,15 @@ h1 {
 .start_quiz_text_and_button {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-end;
   font-size: 1.8rem;
 
   & button {
-    margin-right: 5rem;
+    margin-top: 7rem;
     width: 15rem;
     border: none;
-    background-color: #aa0816;
+    background-color: var(--red);
     color: white;
     padding: 1rem 1.5rem;
     cursor: pointer;
