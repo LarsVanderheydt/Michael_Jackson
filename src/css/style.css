@@ -440,6 +440,8 @@ h1 {
   @apply --black-section-setup;
   height: 90rem;
   padding-top: 11.5rem;
+  background-image: url(../assets/img/Smooth_criminal.png);
+  background-size: cover;
 }
 
 .smooth_criminal_mj_top_container {
@@ -467,9 +469,10 @@ h1 {
 
 .smooth_criminal_shoes_title {
   position: absolute;
-  transform: rotate(270deg);
-  margin-top: 28.5rem;
-  margin-left: -25rem;
+  transform: rotate(-90deg);
+  transform-origin: left bottom;
+  margin-left: 7rem;
+  margin-top: 63rem;
   font-size: 5rem;
   font-family: 'Big Caslon';
   letter-spacing: .5rem;
@@ -1009,6 +1012,33 @@ h1 {
     padding: 1rem 1.5rem;
     cursor: pointer;
   }
+}
+
+/* Pictures.jsx */
+
+.react_pictures {
+  display: flex;
+  flex-direction: row;
+  margin-left: -40rem;
+  margin-bottom: -12.5rem;
+}
+
+.react_picture {
+  width: 25vw;
+  height: auto;
+}
+
+.image-upload-label {
+  width: 22rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4rem 0;
+  margin-left: 10rem;
+}
+
+.image-upload > input {
+  display: none;
 }
 
 /* Question.jsx */

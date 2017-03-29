@@ -3,11 +3,11 @@ import Photo from './Photo';
 
 const Photos = ({photos}) => {
   return (
-    <ul>
+    <div className='react_pictures'>
       {photos.map(photo => {
         return <Photo key={photo.id} url={photo.name} />;
       })}
-    </ul>
+    </div>
   );
 };
 

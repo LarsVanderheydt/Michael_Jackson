@@ -3,11 +3,14 @@ import React, {PropTypes} from 'react';
 const Upload = ({handleUpload: getFeedback}) => {
 
   return (
-    <input
-      type='file'
-      className='add react_margin'
-      onChange={getFeedback}
-    />
+    <div className='image-upload'>
+      <label htmlFor='file-input' className='image-upload-label'>
+          <img src='../assets/img/upload.jpg' />
+          <p>Upload jouw outfit</p>
+      </label>
+
+      <input type='file' id='file-input' className='add react_margin' onChange={getFeedback} />
+    </div>
   );
 
 };

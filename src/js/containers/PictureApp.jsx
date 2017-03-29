@@ -47,7 +47,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.add(`lars.jpg`, `jos.jpg`, `redjala.jpg`, `seyna.jpg`);
+    this.add(`../assets/img/react_picture_1.jpg`, `../assets/img/react_picture_2.jpg`, `../assets/img/react_picture_3.jpg`, `../assets/img/react_picture_4.jpg`);
   }
 
   render() {
