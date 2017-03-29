@@ -2,7 +2,8 @@
 
 import React from 'react';
 import {render} from 'react-dom';
-import App from './containers/App';
+import QuizApp from './containers/QuizApp';
+import PictureApp from './containers/PictureApp';
 import ScrollToAnim from './lib/scrollToAnim';
 
 let videoIsPlaying;
@@ -18,8 +19,13 @@ const init = () => {
   checkVideoStatus();
 
   render(
-    <App  />,
+    <QuizApp  />,
     document.querySelector(`.quiz`)
+  );
+
+  render(
+    <PictureApp  />,
+    document.querySelector(`.picture`)
   );
 };
 

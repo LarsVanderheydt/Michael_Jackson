@@ -13,7 +13,7 @@ const Question = ({questions, onQuestionAnswered: handleChange, currentQuestion}
 
   return (
     <div>
-      <h1 className='bold_italic quiz_margin'>{questions[currentQuestion].question.toString()}</h1>
+      <h1 className='bold_italic react_margin'>{questions[currentQuestion].question.toString()}</h1>
       {questions[currentQuestion].chooseFrom.map(
         a => {
           return (

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import Question from '../components/Question';
-import StartQuiz from '../components/StartQuiz';
-import ScoreFeedback from '../components/ScoreFeedback';
+import Question from '../components/quiz/Question';
+import StartQuiz from '../components/quiz/StartQuiz';
+import ScoreFeedback from '../components/quiz/ScoreFeedback';
 
 let score = 0;
 
@@ -164,10 +164,10 @@ class App extends Component {
 
   render() {
     return (
-      <header className='quiz_div'>
-        <h1 className='quiz_title'>How MJ are you?</h1>
+      <section className='react_div'>
+        <h1 className='react_title'>How MJ are you?</h1>
         {this.startQuiz()}
-      </header>
+      </section>
     );
   }
 }

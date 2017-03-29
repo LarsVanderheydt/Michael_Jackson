@@ -47,7 +47,7 @@ h1 {
   font-weight: bold;
 }
 
-.quiz_margin { margin-bottom: 2rem; }
+.react_margin { margin-bottom: 2rem; }
 
 .top_quote {
   font-style: italic;
@@ -573,24 +573,23 @@ h1 {
   }
 }
 
-/*  QUIZSTYLING  */
+/*  REACTSTYLING  */
 
-.quiz {
+.react {
   display: flex;
   align-content: center;
   justify-content: center;
   margin-right: 15rem;
-  height: 30rem;
 }
 
 /* App.jsx */
 
-.quiz_div {
-  width: 30vw;
-  margin-top: 12.5rem;
+.react_div {
+  width: 33vw;
+  margin: 12.5rem 0;
 }
 
-.quiz_title {
+.react_title {
   color: var(--red);
   font-family: 'Big Caslon';
   margin-bottom: 4.5rem;
