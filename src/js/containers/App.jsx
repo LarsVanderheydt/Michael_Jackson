@@ -17,17 +17,17 @@ class App extends Component {
           {
             id: 1,
             answer: `Zwart`,
-            answerScore: 1
+            answerScore: 0
           },
           {
             id: 2,
             answer: `Blank`,
-            answerScore: 2
+            answerScore: 10
           },
           {
             id: 3,
             answer: `It doesn’t matter if you’re black or white`,
-            answerScore: 5
+            answerScore: 20
           }
         ]
       },
@@ -38,17 +38,17 @@ class App extends Component {
           {
             id: 1,
             answer: `Cola`,
-            answerScore: 3
+            answerScore: 0
           },
           {
             id: 2,
             answer: `Pepsi`,
-            answerScore: 4
+            answerScore: 20
           },
           {
             id: 3,
             answer: `Andere`,
-            answerScore: 5
+            answerScore: 10
           }
         ]
       },
@@ -59,17 +59,17 @@ class App extends Component {
           {
             id: 1,
             answer: `Paris`,
-            answerScore: 6
+            answerScore: 20
           },
           {
             id: 2,
             answer: `Laquisha`,
-            answerScore: 9
+            answerScore: 0
           },
           {
             id: 3,
-            answer: `Chantal`,
-            answerScore: 5
+            answer: `Janet`,
+            answerScore: 10
           }
         ]
       },
@@ -80,17 +80,38 @@ class App extends Component {
           {
             id: 1,
             answer: `Niets gaat boven de liefde van een hond.`,
-            answerScore: 6
+            answerScore: 10
           },
           {
             id: 2,
             answer: `Sowieso een aap! Of nee, een tijger! Of een giraf, papegaai, olifant, enkele flamingo’s, reptielen en gooi er nog maar een vogelspin bij ook.`,
-            answerScore: 9
+            answerScore: 20
           },
           {
             id: 3,
             answer: `Toch liever een huiskat.`,
-            answerScore: 5
+            answerScore: 0
+          }
+        ]
+      },
+      {
+        questionNr: 4,
+        question: `Op een feestje ben ik...`,
+        chooseFrom: [
+          {
+            id: 1,
+            answer: `Degene die de dansvloer in palmt en omstaanders imponeert met mijn te gekke dansmoves`,
+            answerScore: 20
+          },
+          {
+            id: 2,
+            answer: `Degene die rustig aan de kant zit en geniet van een leuke babbel`,
+            answerScore: 0
+          },
+          {
+            id: 3,
+            answer: `De kerel die om 2u de 'pretty baby with the high heels on' achterna zit`,
+            answerScore: 10
           }
         ]
       }

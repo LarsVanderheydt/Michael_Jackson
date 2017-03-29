@@ -7,10 +7,6 @@ body {
   line-height: 2.5rem;
 }
 
-header {
-  margin: 2rem 0;
-}
-
 h1 {
   font-size: 3rem;
 }
@@ -40,6 +36,10 @@ h1 {
 }
 
 /*  REUSABLE  */
+
+.hide {
+  visibility: hidden;
+}
 
 .bold_italic {
   font-size: 1.8rem;
@@ -97,6 +97,29 @@ h1 {
   font-style: italic;
   color: white;
   opacity: .5;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.video_replay_button {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 50px solid white;
+  border-bottom: 25px solid transparent;
+  transition: border-left .2s ease-in;
+
+  &:hover {
+    border-left: 50px solid var(--red);
+    cursor: pointer;
+  }
 }
 
 /*  INTRO  */
@@ -215,7 +238,9 @@ h1 {
   font-size: 2.4rem;
   text-decoration: none;
 
-  &:hover { color: var(--red); }
+  &:hover {
+    color: var(--red);
+  }
 }
 
 .smooth_criminal_quote_container {
@@ -250,7 +275,7 @@ h1 {
       @apply --line-setup;
       height: var(--line-thickness);
       left: 0;
-      width: 10rem;
+      width: 8rem;
       margin-top: 1rem;
       background-color: white;
     }
@@ -298,28 +323,28 @@ h1 {
   text-align: center;
   margin-left: -30rem;
   font-family: Georgia;
-  font-size: 3.4rem;
-  line-height: 5rem;
+  font-size: 2.8rem;
+  line-height: 4rem;
   font-style: italic;
-  width: 36rem;
+  width: 30rem;
   color: #defcf5;
 
   &::after {
     @apply --line-setup;
-    height: var(--line-thickness);
-    width: 53rem;
+    height: calc(var(--line-thickness) / 2);
+    width: 45rem;
     background-color: var(--red);
     margin-top: 6rem;
-    margin-left: -38rem;
+    margin-left: -33rem;
   }
 
   &::before {
     @apply --line-setup;
-    height: var(--line-thickness);
-    width: 53rem;
+    height: calc(var(--line-thickness) / 2);
+    width: 45rem;
     background-color: var(--red);
     margin-left: -9rem;
-    margin-top: -1rem;
+    margin-top: -2rem;
   }
 }
 
@@ -410,7 +435,7 @@ h1 {
       height: 20rem;
       transform: rotate(270deg);
       margin-top: -8.5rem;
-      margin-left: -12rem;
+      margin-left: -12.6rem;
     }
   }
 
@@ -423,7 +448,7 @@ h1 {
     @apply --line-setup;
     width: var(--line-thickness);
     background-color: black;
-    height: 10rem;
+    height: 20rem;
     margin-left: 3.1rem;
   }
 }
@@ -501,7 +526,7 @@ h1 {
 
   &::before {
     @apply --line-setup;
-    height: var(--line-thickness);
+    height: calc(var(--line-thickness) / 2);
     width: 53rem;
     background-color: var(--red);
     margin-left: -3rem;
@@ -510,7 +535,7 @@ h1 {
 
   &::after {
     @apply --line-setup;
-    height: var(--line-thickness);
+    height: calc(var(--line-thickness) / 2);
     width: 53rem;
     background-color: var(--red);
     margin-top: 6rem;
@@ -612,7 +637,7 @@ h1 {
   }
 
   & input + div {
-    margin-top: .2rem;
+    margin-top: .6rem;
     width: 1.5rem;
     height: 1.5rem;
     border-radius: 50px;
@@ -628,7 +653,7 @@ h1 {
 
 .question_tracking_div {
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 
 .question_tracker {
