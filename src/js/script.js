@@ -10,11 +10,16 @@ let videoIsPlaying;
 const $video = document.querySelector(`video`);
 const $replayButton = document.querySelector(`.video_replay_button`);
 
+let scrollTopParam = document.documentElement.scrollTop;
+let scrollingUp = 0;
+let scrollingDown = 0;
+
 const init = () => {
   const $skipButton = document.querySelector(`.video_skip`);
   $skipButton.addEventListener(`click`, skipHandler);
 
   $replayButton.addEventListener(`click`, replayHandler);
+  window.addEventListener(`scroll`, test);
 
   checkVideoStatus();
 
@@ -27,6 +32,41 @@ const init = () => {
     <PictureApp  />,
     document.querySelector(`.picture`)
   );
+};
+
+const test = () => {
+  checkScrollDirection();
+  if (scrollingUp) {
+    handleScrollingUp();
+  }
+
+  if (scrollingDown) {
+    handleScrollingDown();
+  }
+};
+
+const handleScrollingDown = () => {
+  if (window.scrollY >= 1500 && window.scrollY <= 1520) {
+    requestAnimationFrame(() => ScrollToAnim(window.innerHeight * 25 / 40, 0));
+  }
+  console.log(`down`);
+};
+
+const handleScrollingUp = () => {
+  console.log(`up`);
+};
+
+const checkScrollDirection = () => {
+  console.log(document.documentElement.scrollTop);
+  if (document.documentElement.scrollTop > scrollTopParam) {
+    scrollingDown = 1;
+    scrollingUp = 0;
+  }
+  if (document.documentElement.scrollTop < scrollTopParam) {
+    scrollingDown = 0;
+    scrollingUp = 1;
+  }
+  scrollTopParam = document.documentElement.scrollTop;
 };
 
 const checkVideoStatus = () => {
