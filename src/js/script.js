@@ -18,6 +18,17 @@ const $badScrollLeft = document.querySelector(`.bad-scroll-left`);
 const containerBeatIt = document.querySelector(`.sunglasses_second_container_beat_it`);
 const containerBad = document.querySelector(`.sunglasses_second_container_bad`);
 
+
+const containerShoes = document.querySelector(`.smooth_criminal_container_shoes`);
+const containerHat = document.querySelector(`.smooth_criminal_container_hat`);
+
+let hatTriggered = 0;
+let shoesTriggered = 1;
+// containerShoes.style.transform = `translate(0, -200rem)`;
+// containerHat.style.transform = `translate(0, 0)`;
+const mainContainerSmoothCriminal = document.querySelector(`.smooth_criminal_main_container`);
+
+
 const init = () => {
   const $skipButton = document.querySelector(`.video_skip`);
   $skipButton.addEventListener(`click`, skipHandler);
@@ -25,6 +36,8 @@ const init = () => {
 
   $badScrollRight.addEventListener(`click`, onScrollRightClick);
   $badScrollLeft.addEventListener(`click`, onScrollLeftClick);
+
+  window.addEventListener(`scroll`, onScroll);
 
   $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
 
@@ -41,6 +54,38 @@ const init = () => {
     document.querySelector(`.picture`)
   );
 
+};
+
+const onScroll = () => {
+
+  if (window.innerHeight > mainContainerSmoothCriminal.getBoundingClientRect().bottom && hatTriggered === 0) {
+    console.log(`HAT TRIGGERED`);
+    scrollBy(0, - 100);
+    triggerHat();
+  }
+
+  if (window.innerHeight < mainContainerSmoothCriminal.getBoundingClientRect().bottom - 200 && shoesTriggered === 0) {
+    console.log(`SHOES TRIGGERED`);
+    scrollBy(0, 100);
+    triggerShoes();
+  }
+
+};
+
+const triggerHat = () => {
+  console.log(`TIS AN HAT`);
+  hatTriggered = 1;
+  shoesTriggered = 0;
+  containerShoes.style.transform = `translate(0, -200rem)`;
+  containerHat.style.transform = `translate(0, 0)`;
+};
+
+const triggerShoes = () => {
+  console.log(`TIS AN SHOES`);
+  hatTriggered = 0;
+  shoesTriggered = 1;
+  containerShoes.style.transform = `translate(0, 0)`;
+  containerHat.style.transform = `translate(0, 200rem)`;
 };
 
 const onScrollLeftClick = () => {
