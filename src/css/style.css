@@ -92,11 +92,14 @@ h1 {
 }
 
 .video_skip {
+  width: 15rem;
   position: absolute;
   z-index: 9;
-  left: 90%;
+  right: 0;
+  margin-right: 0;
   top: 95%;
   border: none;
+  text-align: left;
   background-color: transparent;
   font-size: 1.5rem;
   font-weight: 200;
