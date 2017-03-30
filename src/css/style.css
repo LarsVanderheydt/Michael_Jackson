@@ -283,24 +283,51 @@ h1 { font-size: 3rem; }
 
 /* SMOOTH CRIMINAl */
 
-.smooth_criminal_container {
-  @apply --black-section-setup;
+.smooth_criminal_main_container {
   height: 90rem;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
   margin-bottom: -1rem;
   padding-top: 11.5rem;
+  background-color: black;
+}
+
+.smooth_criminal_container {
+  @apply --black-section-setup;
+  position: absolute;
+  height: 90rem;
+  width: 100vw;
   background-image: url(../assets/img/Smooth_criminal.png);
   background-size: cover;
   background-attachment: fixed;
+  top: 0;
+}
+
+.smooth_criminal_container_shoes {
+  transition: transform 1.5s;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+}
+
+.smooth_criminal_container_hat {
+  transform: translate(0, 100rem);
+  transition: transform 1.5s;
+  position: absolute;
+  width: 100vw;
+  top: 0;
 }
 
 .smooth_criminal_mj_top_container {
   position: absolute;
   right: 0;
+  top: 4rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 8rem;
   color: white;
+  z-index: 99;
 
   & h1 {
     font-size: 25.55rem;
@@ -338,19 +365,19 @@ h1 { font-size: 3rem; }
 
 .smooth_criminal_left_text {
   margin-left: 10rem;
-  margin-bottom: 3rem;
+  margin-top: 10rem;
 }
 
 .smooth_criminal_img {
   margin-left: -7rem;
   transform: scale(.9);
-  margin-top: -35rem;
+  margin-top: 57rem;
 }
 
 .smooth_criminal_right_container {
   width: var(--section-width);
   margin-left: 30rem;
-  margin-top: 15rem;
+  margin-top: 23rem;
   display: flex;
   flex-direction: column;
 }
