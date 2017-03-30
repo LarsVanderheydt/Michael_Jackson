@@ -7,9 +7,7 @@ body {
   line-height: 2.5rem;
 }
 
-h1 {
-  font-size: 3rem;
-}
+h1 { font-size: 3rem; }
 
 :root {
   --red: #aa0816;
@@ -37,9 +35,7 @@ h1 {
 
 /*  REUSABLE  */
 
-.hide {
-  visibility: hidden;
-}
+.hide { visibility: hidden; }
 
 .bold_italic {
   font-size: 1.8rem;
@@ -107,9 +103,7 @@ h1 {
   color: white;
   opacity: .5;
 
-  &:hover {
-    cursor: pointer;
-  }
+  &:hover { cursor: pointer; }
 }
 
 .video_replay_button {
@@ -159,16 +153,13 @@ h1 {
 }
 
 .intro_text_container {
-  width: 50rem;
+  width: var(--section-width);
   font-family: 'Helvetica neue';
   margin: 0 auto;
   padding-top: 15rem;
   font-style: italic;
 
-  & p {
-    font-size: 2rem;
-    margin-bottom: 4rem;
-  }
+  & p { margin-bottom: 4rem; }
 }
 
 /* JACKETS */
@@ -210,9 +201,7 @@ h1 {
   justify-content: space-around;
   align-items: center;
 
-  & h1 {
-    margin-bottom: 7rem;
-  }
+  & h1 { margin-bottom: 7rem; }
 
   & p {
     width: var(--section-width);
@@ -238,24 +227,9 @@ h1 {
   font-style: italic;
   color: var(--red);
   line-height: 3rem;
-
-  &::after {
-    @apply --line-setup;
-    height: calc(var(--line-thickness) / 2);
-    width: 54rem;
-    background-color: var(--red);
-    margin-top: 6rem;
-    margin-left: -33rem;
-  }
-
-  &::before {
-    @apply --line-setup;
-    height: calc(var(--line-thickness) / 2);
-    width: 54rem;
-    background-color: var(--red);
-    margin-left: -2rem;
-    margin-top: -2rem;
-  }
+  border-top: var(--line-thickness) solid var(--red);
+  border-bottom: var(--line-thickness) solid var(--red);
+  padding: 2rem;
 }
 
 /* SMOOTH CRIMINAl */
@@ -263,6 +237,7 @@ h1 {
 .smooth_criminal_container {
   @apply --black-section-setup;
   height: 90rem;
+  margin-bottom: -1rem;
   padding-top: 11.5rem;
   background-image: url(../assets/img/Smooth_criminal.png);
   background-size: cover;
@@ -320,7 +295,7 @@ h1 {
 .smooth_criminal_img {
   margin-left: -7rem;
   transform: scale(.9);
-  margin-top: 2rem;
+  margin-top: -35rem;
 }
 
 .smooth_criminal_right_container {
@@ -340,9 +315,7 @@ h1 {
   font-size: 2.4rem;
   text-decoration: none;
 
-  &:hover {
-    color: var(--red);
-  }
+  &:hover { color: var(--red); }
 }
 
 .smooth_criminal_quote_container {
@@ -406,9 +379,7 @@ h1 {
     line-height: 7rem;
   }
 
-  & p {
-    margin-top: 7rem;
-  }
+  & p { margin-top: 7rem; }
 }
 
 .single_rhinestone_glove_right_first_p {
@@ -428,26 +399,11 @@ h1 {
   font-size: 2.8rem;
   line-height: 4rem;
   font-style: italic;
-  width: 30rem;
+  width: 38rem;
   color: #defcf5;
-
-  &::after {
-    @apply --line-setup;
-    height: calc(var(--line-thickness) / 2);
-    width: 45rem;
-    background-color: var(--red);
-    margin-top: 6rem;
-    margin-left: -33rem;
-  }
-
-  &::before {
-    @apply --line-setup;
-    height: calc(var(--line-thickness) / 2);
-    width: 45rem;
-    background-color: var(--red);
-    margin-left: -9rem;
-    margin-top: -2rem;
-  }
+  border-top: var(--line-thickness) solid var(--red);
+  border-bottom: var(--line-thickness) solid var(--red);
+  padding: 2rem;
 }
 
 /*  SUNGLASSES  */
@@ -455,6 +411,7 @@ h1 {
 .sunglasses_first_container {
   width: 100vw;
   height: 90rem;
+  margin-top: 15rem;
 }
 
 .sunglasses_img {
@@ -471,7 +428,6 @@ h1 {
 
   & h1 {
     margin-right: 20rem;
-    margin-top: 20rem;
     text-align: right;
 
     &::after {
@@ -509,7 +465,7 @@ h1 {
 }
 
 .sunglasses_second_container {
-  margin-top: -8rem;
+  margin-top: -6rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -558,9 +514,7 @@ h1 {
   padding-top: 10rem;
 }
 
-.sunglasses_second_p {
-  margin-left: 20rem;
-}
+.sunglasses_second_p { margin-left: 20rem; }
 
 /*  PENNY LOAFERS */
 
@@ -586,9 +540,7 @@ h1 {
   }
 }
 
-.penny_loafers_img {
-  margin-top: -4rem;
-}
+.penny_loafers_img { margin-top: -4rem; }
 
 .penny_loafers_section {
   height: 100rem;
@@ -602,9 +554,7 @@ h1 {
   background-repeat: no-repeat;
   background-position: bottom left;
 
-  & p {
-    width: var(--section-width);
-  }
+  & p { width: var(--section-width); }
 }
 
 .penny_loafers_text_left {
@@ -612,9 +562,7 @@ h1 {
   padding-top: 3rem;
 }
 
-.penny_loafers_text_right {
-  margin-left: 60rem;
-}
+.penny_loafers_text_right { margin-left: 60rem; }
 
 .penny_loafers_quote {
   font-style: italic;
@@ -623,24 +571,9 @@ h1 {
   font-family: Georgia;
   line-height: 3.5rem;
   font-weight: 100;
-
-  &::before {
-    @apply --line-setup;
-    height: calc(var(--line-thickness) / 2);
-    width: 53rem;
-    background-color: var(--red);
-    margin-left: -3rem;
-    margin-top: -2rem;
-  }
-
-  &::after {
-    @apply --line-setup;
-    height: calc(var(--line-thickness) / 2);
-    width: 53rem;
-    background-color: var(--red);
-    margin-top: 6rem;
-    margin-left: -47rem;
-  }
+  border-top: var(--line-thickness) solid var(--red);
+  border-bottom: var(--line-thickness) solid var(--red);
+  padding: 2rem;
 }
 
 .penny_loafers_border_left {
@@ -690,10 +623,12 @@ h1 {
 }
 
 .react_title {
+  width: 70vw;
   color: var(--red);
   font-family: 'Big Caslon';
   margin-bottom: 4.5rem;
   font-size: 4rem;
+  line-height: 4rem;
 }
 
 /* StartQuiz.jsx */
@@ -739,9 +674,7 @@ h1 {
   margin-left: 10rem;
 }
 
-.image-upload > input {
-  display: none;
-}
+.image-upload > input { display: none; }
 
 /* Question.jsx */
 
@@ -758,9 +691,7 @@ h1 {
 .radio_button_label {
   margin-right: 1.5rem;
 
-  & input {
-    display: none;
-  }
+  & input { display: none; }
 
   & input + div {
     margin-top: .6rem;
@@ -772,9 +703,7 @@ h1 {
     border: .2rem solid black;
   }
 
-  & input:checked + div {
-    background-color: black;
-  }
+  & input:checked + div { background-color: black; }
 }
 
 .question_tracking_div {
@@ -797,7 +726,7 @@ h1 {
 .footer {
   background-color: black;
   height: 20rem;
-  margin-top: 20rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
 }
@@ -810,269 +739,35 @@ h1 {
   font-family: Impact;
 }
 
-@media (width <= 1000px) {
+/*  MEDIA QUERIES  */
 
-  .start_quiz_text_and_button, .react_intro {
-    width: 50vw;
-  }
+@media (width <= 1420px) {
 
-  .react_title {
-    width: 90vw;
-    line-height: 4rem;
+  .jacket_quote {
+    margin-left: -15rem;
+    width: 100vw;
   }
 }
 
-@media (width <= 545px) {
+@media (width <= 1325px) {
 
-  .react_title {
-    font-size: 7vw;
-  }
-}
-
-@media (width <= 430px) {
-
-  .sunglasses_second_text_container {
-
-    & h2 {
-      color: #6b6b6b;
-      margin-top: 45rem;
-    }
-  }
-
-  .penny_loafers_title {
-    position: absolute;
-    margin-top: -53rem;
-    right: 0;
-
-    &::after {
-      opacity: 0;
-    }
-  }
-
-  .penny_loafers_img {
-    margin-top: 25rem;
-  }
-
-  .penny_loafers_text_left {
+  .jacket_quote {
+    margin-left: 3rem;
     width: 90vw;
   }
 
-}
-
-@media (width <= 830px) {
-
-  .bold_italic {
-    font-size: 1.6rem;
-  }
-}
-
-@media (width <= 640px) {
-
-  .bold_italic {
-    font-size: 1.2rem;
-  }
-}
-
-@media (width <= 995px) {
-
-  .penny_loafers_title_div {
-
-    & h1 {
-      font-size: 5vw;
-      margin-left: 0;
-    }
-  }
-}
-
-@media (width <= 1250px) {
-
-  .penny_loafers_section {
-    align-items: center;
-    background-image: url(../assets/img/capa.png);
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    /*filter: brightness(20%);*/
-  }
-
-  .penny_loafers_text_left {
-    margin: 0 auto;
-  }
-
-  .penny_loafers_text_right {
-    margin: 0 auto;
-  }
-}
-
-@media (width <= 700px) {
-
-  .penny_loafers_section {
-    align-items: center;
-    background-image: url(../assets/img/capa.png);
-    background-repeat: no-repeat;
-    background-position: bottom left;
+  .jacket_bottom_content_container {
 
     & p {
-      width: 60vw;
-      padding-left: 1rem;
-    }
-  }
-
-  .penny_loafers_quote {
-    font-size: 4vw;
-  }
-}
-
-@media (width <= 430px) {
-
-  .sunglasses_first_container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .sunglasses_img {
-    margin-top: 4rem;
-  }
-
-  .sunglasses_content_div {
-    width: 100vw;
-
-    & h1 {
-      margin-top: 2rem;
-      margin-left: 2rem;
-      width: 100vw;
-      text-align: left;
-    }
-
-    & p {
-      position: relative;
-      order: 2;
-      width: 20rem;
-      margin-top: 25rem;
-      margin-left: 2.6rem;
-    }
-  }
-}
-
-@media (width <= 1000px) {
-
-  .sunglasses_content_div {
-    font-size: 1.6rem;
-    margin-right: 2rem;
-
-    & p {
-      width: 39rem;
-    }
-  }
-}
-
-@media (width <= 850px) {
-
-  .red_title {
-    font-size: 6vw;
-  }
-}
-
-@media (width <= 580px) {
-
-  .red_title {
-    font-size: 3rem;
-  }
-}
-
-@media (width <= 800px) {
-
-  .sunglasses_second_container {
-    width: 100vw;
-    padding: 0;
-    margin: -30rem 0 0 0;
-    flex-direction: column;
-    align-items: flex-end;
-  }
-
-  .sunglasses_second_text_container {
-    width: 100vw;
-    background-color: black;
-    color: white;
-
-    & p {
-      width: 90vw;
-      margin: 0;
-      padding-bottom: 9rem;
-      padding-left: 10rem;
-    }
-  }
-}
-
-@media (width <= 830px) {
-
-  .intro_jackson {
-    margin-left: 1.8rem;
-  }
-
-  .intro_text_container {
-    width: 70vw;
-
-    & p {
-      font-size: 1.6rem;
-    }
-  }
-}
-
-@media (width <= 640px) {
-
-  .intro_jackson {
-    opacity: .03;
-  }
-
-  .intro_michael {
-    opacity: .05;
-    font-size: 6rem;
-    margin-right: -1rem;
-  }
-
-  .intro_text_container {
-
-    & p {
-      font-size: 1.4rem;
-    }
-  }
-}
-
-@media (width <= 830px) {
-
-  .jackson_history_img {
-    width: 70vw;
-    height: auto;
-  }
-}
-
-@media (width <= 640px) {
-
-  .jackson_history_img {
-    width: 90vw;
-    margin-top: 10rem;
-    height: auto;
-  }
-}
-
-@media (width <= 520px) {
-
-  .jackets_title_container {
-
-    & h1 {
-
-      &::after {
-        width: 10rem;
-      }
+      margin-left: 5rem;
+      width: 50vw;
     }
   }
 }
 
 @media (width <= 1260px) {
 
-  .jacket_top_content_div {
-    width: 80vw;
-  }
+  .jacket_top_content_div { width: 80vw; }
 
   .jacket_top_content_container {
     text-align: left;
@@ -1103,119 +798,40 @@ h1 {
     padding-top: 10rem;
     margin: 0 auto;
 
-    & p {
-      margin: 0;
-    }
+    & p { margin: 0; }
   }
 }
 
-@media (width <= 600px) {
+@media (width <= 1225px) {
 
-  .red_title {
-    font-size: 4rem;
-  }
-}
+  .single_rhinestone_glove_left_container {
+    font-size: 1.6rem;
 
-@media (width <= 1420px) {
-
-  .jacket_quote {
-    margin-left: -15rem;
-    width: 100vw;
-  }
-}
-
-@media (width <= 1325px) {
-
-  .jacket_quote {
-    margin-left: 3rem;
-    width: 90vw;
-
-    &::after {
-      margin-top: 6rem;
-      margin-left: -15rem;
-    }
+    & p { width: 35vw; }
   }
 
-  .jacket_bottom_content_container {
+  .single_rhinestone_glove_right_container {
 
-    & p {
-      margin-left: 5rem;
-      width: 50vw;
-    }
-  }
-}
+    & h1 { font-size: 4rem; }
 
-@media (width <= 1070px) {
-
-  .jacket_bottom_content_container {
-    padding-top: 10rem;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 0 auto;
-
-    & img {
-      order: 1;
-      margin-top: 8rem;
-    }
-
-    & div { order: 0; }
-
-    & p {
-      margin: 0;
-      padding-top: 6rem;
-      width: 80vw;
-    }
-  }
-}
-
-@media (width <= 430px) {
-
-  .smooth_criminal_mj_top_container {
-
-    & h1 {
-      margin-top: 6.5rem;
-      font-size: 100vw;
-      width: 100vw;
-    }
-
-    & h2 {
-      margin-top: 16rem;
-      font-size: 6vw;
-    }
-  }
-
-  .smooth_criminal_left_container {
-
-    & article {
-      width: 90vw;
-      margin-top: -20rem;
-      margin-bottom: 0;
-    }
-  }
-
-  .smooth_criminal_right_container {
-    padding-top: -30rem;
-  }
-
-  .smooth_criminal_shoes_title {
-    position: relative;
-    transform: rotate(0deg);
-    margin-top: 0;
-    font-size: 6vw;
-    padding-bottom: .3rem;
-    margin-left: 3rem;
-    padding-top: 40rem;
+    & p { width: 35vw; }
   }
 }
 
 @media (width <= 1140px) {
 
+  .penny_loafers_text_left {
+    margin: 0 auto;
+  }
+
+  .penny_loafers_text_right {
+    margin: 0 auto;
+  }
+
   .smooth_criminal_img {
-    width: 56vw;
+    width: 100vw;
     height: auto;
     bottom: 0;
-    margin-top: -6rem;
   }
 
   .smooth_criminal_main_container {
@@ -1229,9 +845,7 @@ h1 {
     align-items: center;
   }
 
-  .smooth_criminal_left_container {
-    margin-left: -35rem;
-  }
+  .smooth_criminal_left_container { margin-left: -35rem; }
 
   .smooth_criminal_left_text {
     margin-left: 0;
@@ -1243,13 +857,34 @@ h1 {
     width: 60vw;
   }
 
-  .smooth_criminal_quote_container {
-    display: none;
+  .smooth_criminal_quote_container { display: none; }
+
+  .smooth_criminal_paragraf_div { margin-top: 5rem; }
+}
+
+@media (width <= 1070px) {
+
+  .jacket_bottom_content_container {
+    flex-direction: column;
+    padding-top: 10rem;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+
+    & img {
+      order: 1;
+      margin-top: 8rem;
+    }
+
+    & div { order: 0; }
+
+    & p {
+      margin: 0;
+      width: 80vw;
+    }
   }
 
-  .smooth_criminal_paragraf_div {
-    margin-top: 5rem;
-  }
+  .jacket_bottom_text { padding-bottom: 8rem; }
 }
 
 @media (width <= 1030px) {
@@ -1259,13 +894,9 @@ h1 {
     margin-top: 15rem;
   }
 
-  .smooth_criminal_right_container {
-    margin-top: 20rem;
-  }
+  .smooth_criminal_right_container { margin-top: 20rem; }
 
-  .pretty_baby_quote {
-    margin-top: -16rem;
-  }
+  .pretty_baby_quote { margin-top: -16rem; }
 
   .smooth_criminal_img {
     width: 100vw;
@@ -1273,89 +904,35 @@ h1 {
   }
 }
 
-@media (width <= 700px) {
-
-  .smooth_criminal_left_container {
-    padding-left: 10rem;
-    margin-right: 0;
-  }
-
-  .smooth_criminal_right_container {
-    margin-bottom: 30rem;
-  }
-}
-
-@media (width <= 820px) {
-
-  .smooth_criminal_img {
-    margin-top: 35rem;
-  }
-}
-
-@media (width <= 690px) {
-
-  .smooth_criminal_img {
-    margin-top: 50rem;
-  }
-}
-
-@media (width <= 500px) {
-
-  .smooth_criminal_img {
-    margin-top: 75rem;
-  }
-}
-
-@media (width <= 1225px) {
-
-  .single_rhinestone_glove_left_container {
-    font-size: 1.6rem;
-
-    & p {
-      width: 35vw;
-    }
-  }
-
-  .single_rhinestone_glove_right_container {
-
-    & h1 {
-      font-size: 4rem;
-    }
-
-    & p {
-      width: 35vw;
-    }
-  }
-}
-
 @media (width <= 1000px) {
+
+  .start_quiz_text_and_button, .react_intro { width: 50vw; }
+
+  .sunglasses_content_div {
+    font-size: 1.6rem;
+    margin-right: 2rem;
+
+    & p { width: 39rem; }
+  }
 
   .single_rhinestone_glove_right_container {
     margin-left: 0;
     width: 100vw;
     padding-top: 2rem;
 
-    & h1 {
-      font-size: 4rem;
-    }
+    & h1 { font-size: 4rem; }
 
-    & p {
-      width: 60vw;
-    }
+    & p { width: 60vw; }
 
   }
 
-  .single_rhinestone_glove_quote {
-    margin: 0;
-  }
+  .single_rhinestone_glove_quote { margin: 0; }
 
   .single_rhinestone_glove_left_container {
     margin-left: 0;
     width: 100vw;
 
-    & p {
-      width: 60vw;
-    }
+    & p { width: 60vw; }
   }
 
   .single_rhinestone_glove_container {
@@ -1370,15 +947,202 @@ h1 {
   }
 }
 
-@media (width <= 430px) {
+@media (width <= 995px) {
+
+  .penny_loafers_title_div {
+
+    & h1 {
+      font-size: 5vw;
+      margin-left: 0;
+    }
+  }
+}
+
+@media (width <= 830px) {
+
+  .red_title { font-size: 6vw; }
+
+  .bold_italic { font-size: 1.6rem; }
+
+  .intro_jackson { margin-left: 1.8rem; }
+
+  .intro_text_container { width: 70vw; }
+
+  .text_size { font-size: 1.6rem; }
+
+  .jackson_history_img {
+    width: 70vw;
+    height: auto;
+  }
+
+  .smooth_criminal_img { margin-top: 35rem; }
+}
+
+@media (width <= 800px) {
+
+  .sunglasses_second_container {
+    width: 100vw;
+    padding: 0;
+    margin: -10rem 0 0 0;
+  }
+
+  .sunglasses_second_text_container {
+    width: 100vw;
+
+    & p {
+      width: 90vw;
+      margin: 0;
+      padding-bottom: 9rem;
+      padding-left: 10rem;
+    }
+  }
+}
+
+@media (width <= 700px) {
+
+  .penny_loafers_section {
+
+    & p {
+      width: 60vw;
+      padding-left: 1rem;
+    }
+  }
+
+  .military_jacket_img {
+    width: 100vw;
+    height: auto;
+  }
+
+  .penny_loafers_quote { font-size: 4vw; }
+
+  .smooth_criminal_shoes_title { font-size: 7vw; }
+
+  .smooth_criminal_left_container {
+    padding-left: 10rem;
+    margin-right: 0;
+  }
+
+  .smooth_criminal_right_container { margin-bottom: 30rem; }
+
+  .smooth_criminal_img { margin-top: 30rem; }
+}
+
+@media (width <= 640px) {
+
+  .bold_italic { font-size: 1.2rem; }
+
+  .intro_jackson { opacity: .03; }
+
+  .intro_michael {
+    opacity: .05;
+    font-size: 6rem;
+    margin-right: -1rem;
+  }
+
+  .text_size { font-size: 1.4rem; }
+
+  .jackson_history_img {
+    width: 90vw;
+    margin-top: 10rem;
+    height: auto;
+  }
+}
+
+@media (width <= 600px) {
+
+  .sunglasses_second_text_container {
+
+    & h2 {
+      color: #6b6b6b;
+      margin-top: 45rem;
+    }
+  }
+
+  .penny_loafers_title {
+    position: absolute;
+    margin-top: -53rem;
+    right: 0;
+
+    &::after { opacity: 0; }
+  }
+
+  .penny_loafers_img { margin-top: 25rem; }
+
+  .penny_loafers_text_left { width: 90vw; }
+
+  .sunglasses_first_container {
+    height: 70rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sunglasses_img { margin-top: 4rem; }
+
+  .sunglasses_content_div {
+    width: 100vw;
+
+    & h1 {
+      margin-top: 2rem;
+      margin-left: 2rem;
+      width: 100vw;
+      text-align: left;
+
+      &::after {
+        visibility: hidden;
+      }
+    }
+
+    & p {
+      position: relative;
+      order: 2;
+      width: 20rem;
+      margin-top: 25rem;
+      margin-left: 2.6rem;
+    }
+  }
+
+  .red_title { font-size: 4rem; }
+
+  .smooth_criminal_mj_top_container {
+
+    & h1 {
+      margin-top: 13rem;
+      font-size: 100vw;
+      width: 100vw;
+    }
+
+    & h2 {
+      margin-top: 23rem;
+      font-size: 6vw;
+    }
+  }
+
+  .smooth_criminal_left_container {
+
+    & article {
+      width: 90vw;
+      margin-top: -15rem;
+      margin-bottom: 0;
+    }
+  }
+
+  .smooth_criminal_right_container { padding-top: -30rem; }
+
+  .smooth_criminal_shoes_title {
+    position: relative;
+    transform: rotate(0deg);
+    margin-top: 0;
+    font-size: 6vw;
+    padding-bottom: .3rem;
+    margin-left: 3rem;
+    padding-top: 60rem;
+  }
 
   .single_rhinestone_glove_right_container {
     display: flex;
     flex-direction: column;
 
-    & h1 {
-      font-size: 9vw;
-    }
+    & h1 { font-size: 9vw; }
   }
 
   .single_rhinestone_glove_container {
@@ -1389,5 +1153,37 @@ h1 {
   .single_rhinestone_glove_right_second_p {
     margin-left: 0;
     padding-top: 0;
+  }
+}
+
+@media (width <= 580px) {
+
+  .red_title { font-size: 3rem; }
+}
+
+@media (width <= 545px) {
+
+  .react_title { font-size: 7vw; }
+}
+
+@media (width <= 520px) {
+
+  .jackets_title_history_title {
+
+    &::after { width: 10rem; }
+  }
+}
+
+@media (width <= 500px) {
+
+  .smooth_criminal_img { margin-top: 25rem; }
+}
+
+@media (width <= 450px) {
+
+  .smooth_criminal_shoes_title {
+    font-size: 6vw;
+    padding-bottom: 1rem;
+    margin-left: 5rem;
   }
 }
