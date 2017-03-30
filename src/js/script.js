@@ -2,13 +2,18 @@
 
 import React from 'react';
 import {render} from 'react-dom';
+import Velocity from 'velocity-animate';
+import 'velocity-animate/velocity.ui';
+
 import QuizApp from './containers/QuizApp';
 import PictureApp from './containers/PictureApp';
 import ScrollToAnim from './lib/scrollToAnim';
+import CreateAnimations from './lib/CreateAnimations';
 
 let videoIsPlaying;
 const $video = document.querySelector(`video`);
 const $replayButton = document.querySelector(`.video_replay_button`);
+const $introText = document.querySelector(`.intro_container`);
 
 const $smoothCriminalDiv = document.querySelector(`.smooth_criminal_element_1`);
 const $title = document.querySelector(`.smooth_criminal_shoes_title`);
@@ -16,14 +21,20 @@ const $text1 = document.querySelector(`.smooth_criminal_left_text_js_1`);
 const $text2 = document.querySelector(`.smooth_criminal_left_text_js_2`);
 const $text3 = document.querySelector(`.smooth_criminal_right_text_js_1`);
 const $text4 = document.querySelector(`.smooth_criminal_right_text_js_2`);
+const $jacketEffectFirst = document.querySelector(`.jacket_effect_second`);
 let scrollTopParam = document.documentElement.scrollTop;
 let scrollingUp = 0;
 let scrollingDown = 0;
 
 const init = () => {
   const $skipButton = document.querySelector(`.video_skip`);
+  console.log($jacketEffectFirst);
   $skipButton.addEventListener(`click`, skipHandler);
   $replayButton.addEventListener(`click`, replayHandler);
+  $replayButton.addEventListener(`mouseenter`, mouseOverhandler);
+
+  Velocity($skipButton, `callout.shake`);
+  Velocity($replayButton, `transition.flipBounceXIn`, false, true);
 
   window.addEventListener(`scroll`, test);
 
@@ -42,6 +53,10 @@ const init = () => {
 
 };
 
+const mouseOverhandler = () => {
+  Velocity($replayButton, `callout.pulse`);
+};
+
 const videoMobile = () => {
   if (window.innerWidth >= 900) {
     $video.setAttribute(`autoplay`, `true`);
@@ -50,6 +65,8 @@ const videoMobile = () => {
 
 
 const test = () => {
+  CreateAnimations($introText, `transition.slideUpIn`, 600);
+
   checkScrollDirection();
   if (scrollingUp) {
     handleScrollingUp();
@@ -68,8 +85,6 @@ const handleScrollingDown = () => {
 };
 
 const handleScrollingUp = () => {
-  console.log(window.outerHeight);
-  console.log($smoothCriminalDiv.getBoundingClientRect().bottom);
   if ($smoothCriminalDiv.getBoundingClientRect().bottom + 100 > window.outerHeight) {
     switchToShoes();
   }
@@ -144,7 +159,7 @@ const skipHandler = () => {
   $video.pause();
   const i = 0;
 
-  requestAnimationFrame(() => ScrollToAnim($video.offsetHeight, i));
+  requestAnimationFrame(() => ScrollToAnim($video.clientHeight, i));
 };
 
 init();
