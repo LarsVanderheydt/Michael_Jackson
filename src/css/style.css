@@ -62,6 +62,7 @@ h1 { font-size: 3rem; }
   font-family: 'Big Caslon';
   color: var(--red);
   font-size: 6rem;
+  z-index: 3;
 }
 
 /*  VIDEO  */
@@ -168,26 +169,36 @@ h1 { font-size: 3rem; }
   width: 100vw;
   overflow: hidden;
   position: relative;
-  z-index: 99;
+  padding-top: 10rem;
+  margin-top: -10rem;
 }
 
 .jacket_effect_second {
   position: absolute;
   left: 0;
-  top: 0;
-  transform: translate(-200rem, 0);
+  bottom: 0;
+  transform: translate(-300rem, 0);
 }
 
 .jacket_effect_third {
   position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(400rem, 0);
+  right: 0;
+  bottom: 0;
+  transform: translate(300rem, 0);
+}
+
+.jacket_effect {
+  transition: transform .7s ease-in;
+}
+
+.jacket_effect_go_in {
+  transition: transform .7s ease-out;
 }
 
 .jackets_container {
   display: flex;
   flex-direction: column;
+  width: 100vw;
 }
 
 .jackets_title_container {
@@ -197,11 +208,11 @@ h1 { font-size: 3rem; }
   color: var(--red);
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  align-self: flex-end;
+  align-items: flex-end;
 
   & h1 {
     margin-top: .5rem;
+    margin-right: 27rem;
 
     &::after {
       @apply --line-setup;
@@ -212,6 +223,24 @@ h1 { font-size: 3rem; }
       margin-top: 1.4rem;
     }
   }
+}
+
+.jacket_title_buttons_div {
+  display: flex;
+}
+
+.jacket_button {
+  margin-right: 2rem;
+  font-size: 4rem;
+  cursor: pointer;
+}
+
+.jacket_button_left {
+  margin-right: 2rem;
+}
+
+.jacket_button_right {
+  margin-left: 3rem;
 }
 
 .jacket_top_content_container {
@@ -437,13 +466,17 @@ h1 { font-size: 3rem; }
 }
 
 .sunglasses_img {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-image: url(../assets/img/Sunglasses.png);
+  width: 90vw;
+  height: 70rem;
+  background-size: contain;
+  transform: scale(1.03, 1.03) translate(-50%, 0);
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
-  z-index: -99;
-  margin-top: -.3rem;
-  width: 90vw;
-  height: auto;
+  z-index: 0;
+  margin-top: 3.5rem;
 }
 
 .sunglasses_content_div {
@@ -467,6 +500,7 @@ h1 { font-size: 3rem; }
     width: 49rem;
     margin-top: 40vw;
     margin-left: 30vw;
+    z-index: 3;
 
     &::before {
       @apply --line-setup;
@@ -491,12 +525,86 @@ h1 { font-size: 3rem; }
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
+  width: 100vw;
+  height: 70rem;
+  overflow: hidden;
+}
+
+.sunglasses_second_container_bad {
+  margin-top: -8rem;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: transform 1.5s;
+}
+
+.sunglasses_second_container_beat_it {
+  margin-top: -8rem;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-100vw, 0);
+  transition: transform 1.5s;
+}
+
+.bad-scroll-right {
+  color: white;
+  font-size: 3rem;
+  position: absolute;
+  right: -46rem;
+  bottom: 20rem;
+  animation-duration: .5s;
+  animation-name: backandforth;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+.bad-scroll-left {
+  color: black;
+  font-size: 3rem;
+  position: absolute;
+  left: -3rem;
+  bottom: 17rem;
+  animation-duration: .5s;
+  animation-name: forthandback;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+@keyframes backandforth {
+
+  from {
+    right: -46rem;
+  }
+
+  to {
+    right: -45rem;
+  }
+}
+
+@keyframes forthandback {
+
+  from {
+    left: -3rem;
+  }
+
+  to {
+    left: -4rem;
+  }
 }
 
 .sunglasses_second_text_container {
   width: 80rem;
   background-color: black;
   color: white;
+  padding-bottom: 1.8rem;
 
   & h2 {
     position: absolute;
@@ -573,6 +681,7 @@ h1 { font-size: 3rem; }
   justify-content: space-around;
   align-items: center;
   background-image: url(../assets/img/capa.png);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: bottom left;
 
