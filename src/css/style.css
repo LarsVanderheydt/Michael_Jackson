@@ -66,6 +66,7 @@ h1 {
   font-family: 'Big Caslon';
   color: var(--red);
   font-size: 6rem;
+  z-index: 3;
 }
 
 /*  VIDEO  */
@@ -458,13 +459,17 @@ h1 {
 }
 
 .sunglasses_img {
+  background-color: white;
+  background-repeat: no-repeat;
+  background-image: url(../assets/img/Sunglasses.png);
+  width: 90vw;
+  height: 70rem;
+  background-size: cover;
+  transform: scale(1.03, 1.03) translate(-50%, 0);
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
-  z-index: -99;
-  margin-top: -.3rem;
-  width: 90vw;
-  height: auto;
+  z-index: 0;
+  margin-top: 3.5rem;
 }
 
 .sunglasses_content_div {
@@ -489,6 +494,7 @@ h1 {
     width: 49rem;
     margin-top: 40vw;
     margin-left: 30vw;
+    z-index: 3;
 
     &::before {
       @apply --line-setup;
@@ -599,6 +605,7 @@ h1 {
   justify-content: space-around;
   align-items: center;
   background-image: url(../assets/img/capa.png);
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: bottom left;
 
