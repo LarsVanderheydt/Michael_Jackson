@@ -21,7 +21,7 @@ class App extends Component {
     } else {
       return (
         <div>
-          <p className='react_margin'>Dit is de kans om Michael weer even helemaal tot leven te laten komen. <span className='bold_italic'>Maak je eigen outfit en tover jezelf helemaal om tot ‘The King of Pop’.</span> Alle inzendingen komen op de site te staan.</p>
+          <p className='react_margin react_intro'>Dit is de kans om Michael weer even helemaal tot leven te laten komen. <span className='bold_italic'>Maak je eigen outfit en tover jezelf helemaal om tot ‘The King of Pop’.</span> Alle inzendingen komen op de site te staan.</p>
           <Upload handleUpload={this.getFeedback.bind(this)} />
         </div>
       );

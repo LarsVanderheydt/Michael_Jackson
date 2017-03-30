@@ -23,12 +23,12 @@ let scrollingDown = 0;
 const init = () => {
   const $skipButton = document.querySelector(`.video_skip`);
   $skipButton.addEventListener(`click`, skipHandler);
-
   $replayButton.addEventListener(`click`, replayHandler);
 
   window.addEventListener(`scroll`, test);
 
   checkVideoStatus();
+  videoMobile();
 
   render(
     <QuizApp  />,
@@ -39,6 +39,13 @@ const init = () => {
     <PictureApp  />,
     document.querySelector(`.picture`)
   );
+
+};
+
+const videoMobile = () => {
+  if (window.innerWidth >= 900) {
+    $video.setAttribute(`autoplay`, `true`);
+  }
 };
 
 
