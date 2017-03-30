@@ -442,6 +442,7 @@ h1 {
   padding-top: 11.5rem;
   background-image: url(../assets/img/Smooth_criminal.png);
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .smooth_criminal_mj_top_container {
