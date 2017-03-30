@@ -464,7 +464,7 @@ h1 {
   background-image: url(../assets/img/Sunglasses.png);
   width: 90vw;
   height: 70rem;
-  background-size: cover;
+  background-size: contain;
   transform: scale(1.03, 1.03) translate(-50%, 0);
   position: absolute;
   left: 50%;
@@ -519,12 +519,86 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: relative;
+  width: 100vw;
+  height: 70rem;
+  overflow: hidden;
+}
+
+.sunglasses_second_container_bad {
+  margin-top: -8rem;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: transform 1.5s;
+}
+
+.sunglasses_second_container_beat_it {
+  margin-top: -8rem;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-100vw, 0);
+  transition: transform 1.5s;
+}
+
+.bad-scroll-right {
+  color: white;
+  font-size: 3rem;
+  position: absolute;
+  right: -46rem;
+  bottom: 20rem;
+  animation-duration: .5s;
+  animation-name: backandforth;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+.bad-scroll-left {
+  color: black;
+  font-size: 3rem;
+  position: absolute;
+  left: -3rem;
+  bottom: 17rem;
+  animation-duration: .5s;
+  animation-name: forthandback;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+@keyframes backandforth {
+
+  from {
+    right: -46rem;
+  }
+
+  to {
+    right: -45rem;
+  }
+}
+
+@keyframes forthandback {
+
+  from {
+    left: -3rem;
+  }
+
+  to {
+    left: -4rem;
+  }
 }
 
 .sunglasses_second_text_container {
   width: 80rem;
   background-color: black;
   color: white;
+  padding-bottom: 1.8rem;
 
   & h2 {
     position: absolute;
