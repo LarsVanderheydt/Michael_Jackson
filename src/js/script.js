@@ -7,9 +7,11 @@ import 'velocity-animate/velocity.ui';
 import QuizApp from './containers/QuizApp';
 import PictureApp from './containers/PictureApp';
 import ScrollToAnim from './lib/scrollToAnim';
-import HandleJacketSwitch from './lib/HandleJacketSwitch';
+
+import HandleJacketSwitch from './lib/handleJacketSwitch';
+import HandleSmoothCriminalSwitch from './lib/handleSmoothCriminalSwitch';
 import HoverEffect from './lib/hoverEffect';
-import AnimateElements from './lib/AnimateElements';
+import AnimateElements from './lib/animateElements';
 
 const $video = document.querySelector(`video`);
 const $videoContainer = document.querySelector(`.video`);
@@ -22,20 +24,17 @@ const $badScrollLeft = document.querySelector(`.bad-scroll-left`);
 
 const containerBeatIt = document.querySelector(`.sunglasses_second_container_beat_it`);
 const containerBad = document.querySelector(`.sunglasses_second_container_bad`);
-const containerShoes = document.querySelector(`.smooth_criminal_container_shoes`);
-const containerHat = document.querySelector(`.smooth_criminal_container_hat`);
-const mainContainerSmoothCriminal = document.querySelector(`.smooth_criminal_main_container`);
 const $pennyLoaferLinks = document.querySelectorAll(`.penny_loafers_link`);
+const $pennyLoafer = document.querySelector(`.penny_loafers`);
 
-let hatTriggered = 0;
-let shoesTriggered = 1;
+
 let videoIsPlaying;
 
 const init = () => {
-  console.log($pennyLoaferLinks);
   $skipButton.addEventListener(`click`, skipHandler);
   $replayButton.addEventListener(`click`, replayHandler);
   $replayButton.addEventListener(`mouseenter`, mouseOverhandler);
+
   $badScrollRight.addEventListener(`click`, onScrollRightClick);
   $badScrollLeft.addEventListener(`click`, onScrollLeftClick);
   $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
@@ -43,16 +42,24 @@ const init = () => {
   Velocity($skipButton, `callout.shake`);
   Velocity($replayButton, `transition.flipBounceXIn`);
 
-  window.addEventListener(`scroll`, onScroll);
+  if (window.matchMedia(`(min-width: 1030px)`).matches) {
+    HandleSmoothCriminalSwitch();
+  }
+
+  Velocity($skipButton, `callout.shake`);
+  Velocity($replayButton, `transition.flipBounceXIn`, false, true);
+
+  if (window.matchMedia(`(min-width: 750px)`).matches) {
+    $badScrollRight.addEventListener(`click`, onScrollRightClick);
+    $badScrollLeft.addEventListener(`click`, onScrollLeftClick);
+  }
 
   const $rightButton = document.querySelectorAll(`.jacket_button_right`);
   $rightButton.forEach($el => {
     if (parseInt($el.id) === 3) {
       $el.style.marginTop = 0;
-      $el.style.marginLeft = `18rem`;
     }
   });
-
 
   checkVideoStatus();
   videoMobile();
@@ -68,38 +75,25 @@ const init = () => {
     <PictureApp  />,
     document.querySelector(`.picture`)
   );
+  $pennyLoaferLinks.forEach($el => {
+    $el.addEventListener(`click`, handlePennyLoaferButton);
+  });
+};
 
+const handlePennyLoaferButton = e => {
+  e.preventDefault();
+  const elOffset = getOffset($pennyLoafer);
+  const offset = elOffset - pageYOffset;
+
+  ScrollToAnim(offset + 350, 350);
+};
+
+const getOffset = el => {
+  el = el.getBoundingClientRect();
+  return el.top + pageYOffset;
 };
 
 const mouseOverhandler = () => Velocity($replayButton, `callout.pulse`);
-
-const onScroll = () => {
-
-  if (window.innerHeight > mainContainerSmoothCriminal.getBoundingClientRect().bottom && hatTriggered === 0) {
-    scrollBy(0, - 100);
-    triggerHat();
-  }
-
-  if (window.innerHeight < mainContainerSmoothCriminal.getBoundingClientRect().bottom - 200 && shoesTriggered === 0) {
-    scrollBy(0, 100);
-    triggerShoes();
-  }
-
-};
-
-const triggerHat = () => {
-  hatTriggered = 1;
-  shoesTriggered = 0;
-  containerShoes.style.transform = `translate(0, -200rem)`;
-  containerHat.style.transform = `translate(0, 0)`;
-};
-
-const triggerShoes = () => {
-  hatTriggered = 0;
-  shoesTriggered = 1;
-  containerShoes.style.transform = `translate(0, 0)`;
-  containerHat.style.transform = `translate(0, 200rem)`;
-};
 
 const onScrollLeftClick = () => {
   containerBad.style.transform = `translate(0, 0)`;

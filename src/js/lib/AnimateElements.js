@@ -1,4 +1,4 @@
-import ScrollInAnimation from './ScrollInAnimation';
+import ScrollInAnimation from './scrollInAnimation';
 
 export default () => {
   const $introText = document.querySelector(`.intro_container`);

@@ -1,5 +1,5 @@
 const hoverEffect = ($div, e) => {
-  const movementStrength = 25;
+  const movementStrength = 50;
   const height = movementStrength / window.innerHeight;
   const width = movementStrength / window.innerWidth;
   const pageX = e.clientX - window.innerWidth / 2;
