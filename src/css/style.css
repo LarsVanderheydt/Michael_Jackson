@@ -305,6 +305,11 @@ h1 { font-size: 3rem; }
   top: 0;
 }
 
+.picture_tag {
+  width: 100vw;
+  height: auto;
+}
+
 .smooth_criminal_container_shoes {
   transition: transform 1.5s;
   position: absolute;
@@ -929,6 +934,13 @@ h1 { font-size: 3rem; }
     margin-left: -15rem;
     width: 100vw;
   }
+
+  .jacket_bottom_content_container {
+
+    & div {
+      margin-bottom: 10rem;
+    }
+  }
 }
 
 @media (width <= 1325px) {
@@ -1070,7 +1082,10 @@ h1 { font-size: 3rem; }
     }
   }
 
-  .jacket_bottom_text { padding-bottom: 8rem; }
+  .jacket_bottom_text {
+    padding-bottom: 8rem;
+    padding-top: 5rem;
+  }
 }
 
 @media (width <= 1030px) {
@@ -1083,6 +1098,8 @@ h1 { font-size: 3rem; }
   .smooth_criminal_container_shoes {
     position: static;
     width: 100vw;
+    padding-bottom: 5rem;
+
   }
 
   .smooth_criminal_container_hat {
@@ -1096,6 +1113,12 @@ h1 { font-size: 3rem; }
     margin-left: 0;
     margin-top: 15rem;
   }
+
+  .smooth_criminal_paragraf_div {
+    margin-top: -15rem;
+  }
+
+  .smooth_criminal_mj_top_container_second { visibility: hidden; }
 
   .smooth_criminal_right_container { margin-top: 20rem; }
 
@@ -1150,14 +1173,14 @@ h1 { font-size: 3rem; }
 
     & h1 {
       font-size: 5vw;
-      margin-left: 0;
+      right: 0;
     }
   }
 }
 
 @media (width <= 830px) {
 
-  .red_title { font-size: 6vw; }
+  .red_title { font-size: 4vw; }
 
   .bold_italic { font-size: 1.6rem; }
 
@@ -1298,7 +1321,7 @@ h1 { font-size: 3rem; }
     }
   }
 
-  .red_title { font-size: 4rem; }
+  .red_title { font-size: 3rem; }
 
   .smooth_criminal_mj_top_container {
 

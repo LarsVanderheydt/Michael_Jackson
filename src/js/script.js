@@ -42,7 +42,7 @@ const init = () => {
   Velocity($skipButton, `callout.shake`);
   Velocity($replayButton, `transition.flipBounceXIn`);
 
-  if (window.matchMedia(`(min-width: 1030px)`).matches) {
+  if (window.matchMedia(`(max-width: 9.5rem)`).matches) {
     HandleSmoothCriminalSwitch();
   }
 
@@ -128,7 +128,6 @@ const replayHandler = () => {
 
 const skipHandler = () => {
   videoIsPlaying === false;
-  console.log($videoContainer.offsetHeight);
   $video.currentTime += ($video.duration - $video.currentTime);
   $video.pause();
   const i = 0;
