@@ -12,6 +12,8 @@ import HoverEffect from './lib/hoverEffect';
 import AnimateElements from './lib/AnimateElements';
 
 const $video = document.querySelector(`video`);
+const $videoContainer = document.querySelector(`.video`);
+const $skipButton = document.querySelector(`.video_skip`);
 const $replayButton = document.querySelector(`.video_replay_button`);
 
 const $sunglassesImage = document.querySelector(`.sunglasses_img`);
@@ -23,26 +25,25 @@ const containerBad = document.querySelector(`.sunglasses_second_container_bad`);
 const containerShoes = document.querySelector(`.smooth_criminal_container_shoes`);
 const containerHat = document.querySelector(`.smooth_criminal_container_hat`);
 const mainContainerSmoothCriminal = document.querySelector(`.smooth_criminal_main_container`);
+const $pennyLoaferLinks = document.querySelectorAll(`.penny_loafers_link`);
 
 let hatTriggered = 0;
 let shoesTriggered = 1;
 let videoIsPlaying;
 
 const init = () => {
-  const $skipButton = document.querySelector(`.video_skip`);
+  console.log($pennyLoaferLinks);
   $skipButton.addEventListener(`click`, skipHandler);
   $replayButton.addEventListener(`click`, replayHandler);
   $replayButton.addEventListener(`mouseenter`, mouseOverhandler);
-
-  Velocity($skipButton, `callout.shake`);
-  Velocity($replayButton, `transition.flipBounceXIn`, false, true);
-
   $badScrollRight.addEventListener(`click`, onScrollRightClick);
   $badScrollLeft.addEventListener(`click`, onScrollLeftClick);
+  $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
+
+  Velocity($skipButton, `callout.shake`);
+  Velocity($replayButton, `transition.flipBounceXIn`);
 
   window.addEventListener(`scroll`, onScroll);
-
-  $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
 
   const $rightButton = document.querySelectorAll(`.jacket_button_right`);
   $rightButton.forEach($el => {
@@ -51,6 +52,7 @@ const init = () => {
       $el.style.marginLeft = `18rem`;
     }
   });
+
 
   checkVideoStatus();
   videoMobile();
@@ -116,6 +118,7 @@ const videoMobile = () => {
 };
 
 const checkVideoStatus = () => {
+
   if ($video.paused) {
     $replayButton.classList.remove(`hide`);
   } else {
@@ -131,12 +134,12 @@ const replayHandler = () => {
 
 const skipHandler = () => {
   videoIsPlaying === false;
-
+  console.log($videoContainer.offsetHeight);
   $video.currentTime += ($video.duration - $video.currentTime);
   $video.pause();
   const i = 0;
 
-  requestAnimationFrame(() => ScrollToAnim($video.clientHeight, i));
+  requestAnimationFrame(() => ScrollToAnim($videoContainer.offsetHeight - pageYOffset, i));
 };
 
 init();
