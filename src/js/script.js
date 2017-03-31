@@ -42,7 +42,7 @@ const init = () => {
   Velocity($skipButton, `callout.shake`);
   Velocity($replayButton, `transition.flipBounceXIn`);
 
-  if (window.matchMedia(`(max-width: 9.5rem)`).matches) {
+  if (window.matchMedia(`(min-width: 9.5rem)`).matches) {
     HandleSmoothCriminalSwitch();
   }
 
