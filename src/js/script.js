@@ -8,8 +8,9 @@ import 'velocity-animate/velocity.ui';
 import QuizApp from './containers/QuizApp';
 import PictureApp from './containers/PictureApp';
 import ScrollToAnim from './lib/scrollToAnim';
-import HandleJacketSwitch from './lib/HandleJacketSwitch';
-import ScrollInAnimation from './lib/ScrollInAnimation';
+import HandleJacketSwitch from './lib/handleJacketSwitch';
+import HandleSmoothCriminalSwitch from './lib/handleSmoothCriminalSwitch';
+import ScrollInAnimation from './lib/scrollInAnimation';
 
 // import ScrollInAnimation from './lib/ScrollInAnimation';
 import HoverEffect from './lib/hoverEffect';
@@ -30,28 +31,24 @@ const $jacketImg = document.querySelector(`.jackson_history_img`);
 const $jacketTitleDiv = document.querySelector(`.jacket_title_buttons_div`);
 const $jacketTopContent = document.querySelector(`.jacket_top_content_div`);
 
-const containerShoes = document.querySelector(`.smooth_criminal_container_shoes`);
-const containerHat = document.querySelector(`.smooth_criminal_container_hat`);
-
-let hatTriggered = 0;
-let shoesTriggered = 1;
-// containerShoes.style.transform = `translate(0, -200rem)`;
-// containerHat.style.transform = `translate(0, 0)`;
-const mainContainerSmoothCriminal = document.querySelector(`.smooth_criminal_main_container`);
-
 const init = () => {
   const $skipButton = document.querySelector(`.video_skip`);
   $skipButton.addEventListener(`click`, skipHandler);
   $replayButton.addEventListener(`click`, replayHandler);
   $replayButton.addEventListener(`mouseenter`, mouseOverhandler);
 
+  if (window.matchMedia(`(min-width: 1030px)`).matches) {
+    console.log(`FUCK`);
+    HandleSmoothCriminalSwitch();
+  }
+
   Velocity($skipButton, `callout.shake`);
   Velocity($replayButton, `transition.flipBounceXIn`, false, true);
 
-  $badScrollRight.addEventListener(`click`, onScrollRightClick);
-  $badScrollLeft.addEventListener(`click`, onScrollLeftClick);
-
-  window.addEventListener(`scroll`, onScroll);
+  if (window.matchMedia(`(min-width: 750px)`).matches) {
+    $badScrollRight.addEventListener(`click`, onScrollRightClick);
+    $badScrollLeft.addEventListener(`click`, onScrollLeftClick);
+  }
 
   $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
   ScrollInAnimation($introText, `transition.slideUpIn`, 450);
@@ -85,34 +82,6 @@ const init = () => {
 
 const mouseOverhandler = () => {
   Velocity($replayButton, `callout.pulse`);
-};
-
-const onScroll = () => {
-
-  if (window.innerHeight > mainContainerSmoothCriminal.getBoundingClientRect().bottom && hatTriggered === 0) {
-    scrollBy(0, - 100);
-    triggerHat();
-  }
-
-  if (window.innerHeight < mainContainerSmoothCriminal.getBoundingClientRect().bottom - 200 && shoesTriggered === 0) {
-    scrollBy(0, 100);
-    triggerShoes();
-  }
-
-};
-
-const triggerHat = () => {
-  hatTriggered = 1;
-  shoesTriggered = 0;
-  containerShoes.style.transform = `translate(0, -200rem)`;
-  containerHat.style.transform = `translate(0, 0)`;
-};
-
-const triggerShoes = () => {
-  hatTriggered = 0;
-  shoesTriggered = 1;
-  containerShoes.style.transform = `translate(0, 0)`;
-  containerHat.style.transform = `translate(0, 200rem)`;
 };
 
 const onScrollLeftClick = () => {
