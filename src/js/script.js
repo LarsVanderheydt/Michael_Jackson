@@ -27,6 +27,8 @@ const containerBad = document.querySelector(`.sunglasses_second_container_bad`);
 // elements to animate
 const $introText = document.querySelector(`.intro_container`);
 const $jacketImg = document.querySelector(`.jackson_history_img`);
+const $jacketTitleDiv = document.querySelector(`.jacket_title_buttons_div`);
+const $jacketTopContent = document.querySelector(`.jacket_top_content_div`);
 
 const containerShoes = document.querySelector(`.smooth_criminal_container_shoes`);
 const containerHat = document.querySelector(`.smooth_criminal_container_hat`);
@@ -52,7 +54,19 @@ const init = () => {
   window.addEventListener(`scroll`, onScroll);
 
   $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
-  window.addEventListener(`scroll`, handlePageScroll);
+  ScrollInAnimation($introText, `transition.slideUpIn`, 450);
+  ScrollInAnimation($jacketImg, `transition.slideUpIn`, 400);
+  ScrollInAnimation($jacketTitleDiv, `transition.slideUpIn`, 600);
+  ScrollInAnimation($jacketTopContent, `transition.slideUpIn`, 400);
+
+  const $rightButton = document.querySelectorAll(`.jacket_button_right`);
+  $rightButton.forEach($el => {
+    if (parseInt($el.id) === 3) {
+      $el.style.marginTop = 0;
+      $el.style.marginLeft = `18rem`;
+    }
+  });
+
   checkVideoStatus();
   videoMobile();
   HandleJacketSwitch();
@@ -73,20 +87,14 @@ const mouseOverhandler = () => {
   Velocity($replayButton, `callout.pulse`);
 };
 
-const handlePageScroll = () => {
-  ScrollInAnimation($introText, `transition.slideUpIn`, 450);
-  ScrollInAnimation($jacketImg, `transition.slideUpIn`, 400);
-};
 const onScroll = () => {
 
   if (window.innerHeight > mainContainerSmoothCriminal.getBoundingClientRect().bottom && hatTriggered === 0) {
-    console.log(`HAT TRIGGERED`);
     scrollBy(0, - 100);
     triggerHat();
   }
 
   if (window.innerHeight < mainContainerSmoothCriminal.getBoundingClientRect().bottom - 200 && shoesTriggered === 0) {
-    console.log(`SHOES TRIGGERED`);
     scrollBy(0, 100);
     triggerShoes();
   }
@@ -94,7 +102,6 @@ const onScroll = () => {
 };
 
 const triggerHat = () => {
-  console.log(`TIS AN HAT`);
   hatTriggered = 1;
   shoesTriggered = 0;
   containerShoes.style.transform = `translate(0, -200rem)`;
@@ -102,7 +109,6 @@ const triggerHat = () => {
 };
 
 const triggerShoes = () => {
-  console.log(`TIS AN SHOES`);
   hatTriggered = 0;
   shoesTriggered = 1;
   containerShoes.style.transform = `translate(0, 0)`;

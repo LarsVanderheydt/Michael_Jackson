@@ -11,7 +11,6 @@ export default () => {
   });
   $jacketRightButton.forEach(e => {
     e.addEventListener(`click`, handleFirstJacketRightButton);
-    console.log(e);
   });
 };
 

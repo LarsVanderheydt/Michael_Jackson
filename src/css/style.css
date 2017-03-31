@@ -62,7 +62,6 @@ h1 { font-size: 3rem; }
   font-family: 'Big Caslon';
   color: var(--red);
   font-size: 6rem;
-  z-index: 3;
 }
 
 /*  VIDEO  */
@@ -233,14 +232,16 @@ h1 { font-size: 3rem; }
   margin-right: 2rem;
   font-size: 4rem;
   cursor: pointer;
+  position: absolute;
 }
 
 .jacket_button_left {
-  margin-right: 2rem;
+  margin-left: -5rem;
 }
 
 .jacket_button_right {
-  margin-left: 3rem;
+  margin-left: 51rem;
+  margin-top: -9.5rem;
 }
 
 .jacket_top_content_container {
