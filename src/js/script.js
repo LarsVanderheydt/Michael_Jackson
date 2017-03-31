@@ -1,5 +1,4 @@
 /* eslint-disable react/jsx-filename-extension */
-
 import React from 'react';
 import {render} from 'react-dom';
 import Velocity from 'velocity-animate';
@@ -9,35 +8,25 @@ import QuizApp from './containers/QuizApp';
 import PictureApp from './containers/PictureApp';
 import ScrollToAnim from './lib/scrollToAnim';
 import HandleJacketSwitch from './lib/HandleJacketSwitch';
-import ScrollInAnimation from './lib/ScrollInAnimation';
-
-// import ScrollInAnimation from './lib/ScrollInAnimation';
 import HoverEffect from './lib/hoverEffect';
+import AnimateElements from './lib/AnimateElements';
 
-
-let videoIsPlaying;
 const $video = document.querySelector(`video`);
 const $replayButton = document.querySelector(`.video_replay_button`);
+
 const $sunglassesImage = document.querySelector(`.sunglasses_img`);
 const $badScrollRight = document.querySelector(`.bad-scroll-right`);
 const $badScrollLeft = document.querySelector(`.bad-scroll-left`);
+
 const containerBeatIt = document.querySelector(`.sunglasses_second_container_beat_it`);
 const containerBad = document.querySelector(`.sunglasses_second_container_bad`);
-
-// elements to animate
-const $introText = document.querySelector(`.intro_container`);
-const $jacketImg = document.querySelector(`.jackson_history_img`);
-const $jacketTitleDiv = document.querySelector(`.jacket_title_buttons_div`);
-const $jacketTopContent = document.querySelector(`.jacket_top_content_div`);
-
 const containerShoes = document.querySelector(`.smooth_criminal_container_shoes`);
 const containerHat = document.querySelector(`.smooth_criminal_container_hat`);
+const mainContainerSmoothCriminal = document.querySelector(`.smooth_criminal_main_container`);
 
 let hatTriggered = 0;
 let shoesTriggered = 1;
-// containerShoes.style.transform = `translate(0, -200rem)`;
-// containerHat.style.transform = `translate(0, 0)`;
-const mainContainerSmoothCriminal = document.querySelector(`.smooth_criminal_main_container`);
+let videoIsPlaying;
 
 const init = () => {
   const $skipButton = document.querySelector(`.video_skip`);
@@ -54,10 +43,6 @@ const init = () => {
   window.addEventListener(`scroll`, onScroll);
 
   $sunglassesImage.addEventListener(`mousemove`, e => HoverEffect($sunglassesImage, e));
-  ScrollInAnimation($introText, `transition.slideUpIn`, 450);
-  ScrollInAnimation($jacketImg, `transition.slideUpIn`, 400);
-  ScrollInAnimation($jacketTitleDiv, `transition.slideUpIn`, 600);
-  ScrollInAnimation($jacketTopContent, `transition.slideUpIn`, 400);
 
   const $rightButton = document.querySelectorAll(`.jacket_button_right`);
   $rightButton.forEach($el => {
@@ -70,6 +55,7 @@ const init = () => {
   checkVideoStatus();
   videoMobile();
   HandleJacketSwitch();
+  AnimateElements();
 
   render(
     <QuizApp  />,
@@ -83,9 +69,7 @@ const init = () => {
 
 };
 
-const mouseOverhandler = () => {
-  Velocity($replayButton, `callout.pulse`);
-};
+const mouseOverhandler = () => Velocity($replayButton, `callout.pulse`);
 
 const onScroll = () => {
 

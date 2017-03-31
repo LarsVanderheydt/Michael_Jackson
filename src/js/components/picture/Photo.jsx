@@ -4,7 +4,7 @@ const Photo = ({url}) => {
 
   return (
     <img src={url}
-    //  className='react_picture'
+     className='react_picture'
     />
   );
 };
