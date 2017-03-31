@@ -53,9 +53,11 @@ class App extends Component {
   render() {
     const {photos} = this.state;
     return (
-      <section className='react_div'>
-        <h1 className='react_title'>Become the King of Pop</h1>
-        {this.handleImageUpload()}
+      <section className=''>
+        <div className='react_content'>
+          <h1 className='react_title'>Become the King of Pop</h1>
+          {this.handleImageUpload()}
+        </div>
 
         <Photos photos={photos} />
 
