@@ -1,11 +1,10 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Photo = ({url}) => {
 
   return (
-    <img src={url}
-     className='react_picture'
-    />
+    <img src={url} alt="" className='react_picture' />
   );
 };
 

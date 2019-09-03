@@ -15,19 +15,20 @@ export default () => {
 };
 
 const handleFirstJacketRightButton = e => {
-  switch (parseInt(e.currentTarget.id)) {
-  case 1:
-    currentClassName = `first`;
-    nextClassName = `second`;
-    break;
-  case 2:
-    currentClassName = `second`;
-    nextClassName = `third`;
-    break;
-  case 3:
-    currentClassName = `third`;
-    nextClassName = `first`;
-    break;
+  switch (parseInt(e.currentTarget.id, 10)) {
+    case 1:
+      currentClassName = `first`;
+      nextClassName = `second`;
+      break;
+    case 2:
+      currentClassName = `second`;
+      nextClassName = `third`;
+      break;
+    case 3:
+      currentClassName = `third`;
+      nextClassName = `first`;
+      break;
+    default:
   }
 
 
@@ -45,19 +46,20 @@ const handleFirstJacketRightButton = e => {
 
 const handleFirstJacketLeftButton = e => {
 
-  switch (parseInt(e.currentTarget.id)) {
-  case 1:
-    currentClassName = `first`;
-    nextClassName = `third`;
-    break;
-  case 2:
-    currentClassName = `second`;
-    nextClassName = `first`;
-    break;
-  case 3:
-    currentClassName = `third`;
-    nextClassName = `second`;
-    break;
+  switch (parseInt(e.currentTarget.id, 10)) {
+    case 1:
+      currentClassName = `first`;
+      nextClassName = `third`;
+      break;
+    case 2:
+      currentClassName = `second`;
+      nextClassName = `first`;
+      break;
+    case 3:
+      currentClassName = `third`;
+      nextClassName = `second`;
+      break;
+    default:
   }
 
   const $currentClassName = document.querySelector(`.jacket_effect_${currentClassName}`);

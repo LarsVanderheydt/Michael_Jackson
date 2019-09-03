@@ -121,7 +121,7 @@ class App extends Component {
   changeQuestion(e) {
     const {currentQuestion} = this.state;
     const answer = e.currentTarget;
-    score += parseInt(answer.value);
+    score += parseInt(answer.value, 10);
     setTimeout(() => {
       this.clearAnswerButton(currentQuestion, answer, score);
     }, 500);

@@ -1,11 +1,11 @@
-import React, {PropTypes} from 'react';
-
+import React from 'react';
+import PropTypes from 'prop-types';
 const Upload = ({handleUpload: getFeedback}) => {
 
   return (
     <div className='image-upload'>
       <label htmlFor='file-input' className='image-upload-label'>
-          <img src='../assets/img/upload.jpg' />
+          <img src='../assets/img/upload.jpg' alt="" />
           <p>Upload jouw outfit</p>
       </label>
 

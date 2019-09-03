@@ -12,7 +12,7 @@ const handlePageScroll = ($el, animString, offsetMore) => {
   const offset = elemRect.top - bodyRect.top;
 
   if ($el.classList.contains(`hide`)) {
-    if (offset - offsetMore < pageYOffset) {
+    if (offset - offsetMore < window.pageYOffset) {
       Velocity($el, animString);
       $el.classList.remove(`hide`);
     }

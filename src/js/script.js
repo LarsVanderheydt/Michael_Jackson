@@ -56,7 +56,7 @@ const init = () => {
 
   const $rightButton = document.querySelectorAll(`.jacket_button_right`);
   $rightButton.forEach($el => {
-    if (parseInt($el.id) === 3) {
+    if (parseInt($el.id, 10) === 3) {
       $el.style.marginTop = 0;
     }
   });
@@ -83,14 +83,14 @@ const init = () => {
 const handlePennyLoaferButton = e => {
   e.preventDefault();
   const elOffset = getOffset($pennyLoafer);
-  const offset = elOffset - pageYOffset;
+  const offset = elOffset - window.pageYOffset;
 
   ScrollToAnim(offset + 350, 350);
 };
 
 const getOffset = el => {
   el = el.getBoundingClientRect();
-  return el.top + pageYOffset;
+  return el.top + window.pageYOffset;
 };
 
 const mouseOverhandler = () => Velocity($replayButton, `callout.pulse`);
@@ -122,17 +122,19 @@ const checkVideoStatus = () => {
 };
 
 const replayHandler = () => {
-  videoIsPlaying === true;
-  $video.play();
+  if (videoIsPlaying === true) {
+    $video.play();
+  }
 };
 
 const skipHandler = () => {
-  videoIsPlaying === false;
-  $video.currentTime += ($video.duration - $video.currentTime);
-  $video.pause();
-  const i = 0;
+  if (videoIsPlaying === false) {
+    $video.currentTime += ($video.duration - $video.currentTime);
+    $video.pause();
+    const i = 0;
 
-  requestAnimationFrame(() => ScrollToAnim($videoContainer.offsetHeight - pageYOffset, i));
+    requestAnimationFrame(() => ScrollToAnim($videoContainer.offsetHeight - window.pageYOffset, i));
+  }
 };
 
 init();
