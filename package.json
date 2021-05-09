@@ -28,7 +28,7 @@
     "file-loader": "^0.10.1",
     "html-loader": "^0.4.4",
     "image-webpack-loader": "^6.0.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "postcss-cssnext": "^2.9.0",
     "postcss-loader": "^1.2.1",
     "postcss-reporter": "^3.0.0",
